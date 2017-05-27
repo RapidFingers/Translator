@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=Translator
+Name[ru]=Переводчик
+Name[es]=Traductor
+Name[nl]=Vertaler
+Name[fr]=Traducteur
+GenericName=Translator App
+Comment=Language translator
+Categories=GTK;Utility;
+Exec=translator
+Icon=translator
+Terminal=false
+Type=Application
+X-GNOME-Gettext-Domain=translator
+X-GNOME-Keywords=Translator;

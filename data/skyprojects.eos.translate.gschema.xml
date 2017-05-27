@@ -1,0 +1,21 @@
+<schemalist>
+  <schema id="skyprojects.eos.translator" path="/skyprojects/eos/translator/" gettext-domain="translator">
+
+    <key name="source-lang" type="s">
+      <default>"en"</default>
+      <summary>Source language</summary>
+      <description>
+        Source language
+      </description>
+    </key>
+
+    <key name="dest-lang" type="s">
+      <default>"ru"</default>
+      <summary>Destination language</summary>
+      <description>
+        Destination language
+      </description>
+    </key>
+
+  </schema>
+</schemalist>

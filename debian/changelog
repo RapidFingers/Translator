@@ -1,0 +1,38 @@
+translate (0.7.1) precise; urgency=low
+  * Fix header height
+  * Minor bug fix
+ -- Grabli66 <grabli66@gmail.com>  Tue, 17 October 2016 19:45:00 -0500
+
+translate (0.7) precise; urgency=low
+  * Settings save
+  * Dictionary
+ -- Grabli66 <grabli66@gmail.com>  Tue, 19 August 2015 19:45:00 -0500
+
+translate (0.6.1) precise; urgency=low
+  * Dutch language
+ -- Grabli66 <grabli66@gmail.com>  Tue, 13 June 2015 18:45:00 -0500
+
+translate (0.6) precise; urgency=low
+  * Command line interface
+ -- Grabli66 <grabli66@gmail.com>  Tue, 13 June 2015 18:45:00 -0500
+
+translate (0.5) precise; urgency=low
+  * Translation to Spanish and Russian
+ -- Grabli66 <grabli66@gmail.com>  Tue, 3 May 2015 18:45:00 -0500
+
+
+translate (0.4) precise; urgency=low
+  * Yandex API
+ -- Grabli66 <grabli66@gmail.com>  Tue, 27 Apr 2015 18:45:00 -0500
+
+translate (0.3) precise; urgency=low
+  * Fixed bug of empty bottom view text.
+ -- Grabli66 <grabli66@gmail.com>  Tue, 02 Dec 2014 18:45:00 -0500
+
+translate (0.2) precise; urgency=low
+  * Added lang info and text length.
+ -- Grabli66 <grabli66@gmail.com>  Fri, 17 Apr 2014 22:33:00 -0500
+
+translate (0.1) precise; urgency=low
+  * Initial Release.
+ -- Grabli66 <grabli66@gmail.com>  Tue, 9 Apr 2013 04:53:39 -0500
