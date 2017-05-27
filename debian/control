@@ -1,4 +1,4 @@
-Source: translator
+Source: com.github.rapidfingers.translator
 Section: misc
 Priority: optional
 Maintainer: Grabli66 <grabi66@gmail.com>
@@ -13,10 +13,10 @@ Build-Depends: cmake (>= 2.8),
                valac-0.28 | valac (>= 0.28)
 Standards-Version: 3.9.3
 
-Package: translator
+Package: com.github.rapidfingers.translator
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Conflicts: translator
+Conflicts: com.github.rapidfingers.translator
 Pre-Depends: dpkg (>= 1.15.6)
 Description: Simple language translator, written specialy for Elementary OS
  Simple language translator, written specialy for Elementary OS
