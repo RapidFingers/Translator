@@ -123,10 +123,11 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         _searchWordButton.set_image(Assets.getImage("images/search.svg"));
         _searchWordButton.set_tooltip_text(_("Search"));
         _searchWordButton.clicked.connect(OnDictSearch);
+        _searchWordButton.margin_right = 6;
 
         _rightHeader.pack_start(new Gtk.Label(_("Dictionary")));
         _rightHeader.pack_end(_searchWordButton);
-        _rightHeader.pack_end(_wordInput);
+        _rightHeader.pack_end(_wordInput);        
 
         _headerSeparator = new Gtk.Separator(Gtk.Orientation.VERTICAL);
         _headerSeparator.get_style_context().add_class("dark-separator");
@@ -134,7 +135,9 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         _headerPane.pack_start (_leftHeader, true, true, 0);
         _headerPane.pack_start (_headerSeparator, false, false, 0);
         _headerPane.pack_start (_rightHeader, true, true, 0);
-        _leftHeader.margin = 6;
+        _leftHeader.margin_left = 6;
+        _leftHeader.margin_top = 6;
+        _leftHeader.margin_bottom = 6;
 
         this.set_titlebar (_headerPane);
         this.set_size_request (DEFAULT_WIDTH, DEFAULT_HEIGHT);

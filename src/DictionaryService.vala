@@ -69,17 +69,18 @@ public class DictionaryService : AsyncTaskExecuter {
           foreach (var el1 in defs.get_elements()) {
             var obj1 = el1.get_object();
             var cat = new WordCategory();
-            cat.Category = obj1.get_string_member("pos");
-            cat.Transcription = obj1.get_string_member("ts");
+
+            if (obj1.has_member ("pos")) cat.Category = obj1.get_string_member("pos");
+            if (obj1.has_member ("ts")) cat.Transcription = obj1.get_string_member("ts");
 
             var trs = obj1.get_array_member("tr");
             if (trs == null) continue;
             var trList = new Gee.ArrayList<WordTranslation>();
             foreach (var el2 in trs.get_elements()) {
               var obj2 = el2.get_object();
-              var tr = new WordTranslation();
-              tr.Text = obj2.get_string_member("text");
-              tr.Category = obj2.get_string_member("pos");
+              var tr = new WordTranslation();              
+              if (obj2.has_member ("text")) tr.Text = obj2.get_string_member("text");
+              if (obj2.has_member ("pos")) tr.Category = obj2.get_string_member("pos");
               trList.add(tr);
             }
             cat.Translations = trList.to_array();
