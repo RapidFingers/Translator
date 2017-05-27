@@ -15,7 +15,6 @@ public class Main : Object {
         opt_context.add_main_entries (options, null);
         opt_context.parse (ref args);
         var global = GlobalSettings.instance();
-        var settings = new Settings ("skyprojects.eos.translator");
 
         var sourceLang = global.LoadSourceLang();
         var destLang = global.LoadDestLang();

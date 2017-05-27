@@ -1,5 +1,5 @@
 <schemalist>
-  <schema id="skyprojects.eos.translator" path="/skyprojects/eos/translator/" gettext-domain="translator">
+  <schema id="com.github.rapidfingers.translator" path="/rapidfingers/translator/" gettext-domain="translator">
 
     <key name="source-lang" type="s">
       <default>"en"</default>

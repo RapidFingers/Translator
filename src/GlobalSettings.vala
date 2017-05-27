@@ -6,7 +6,8 @@ public class LangInfo : Object {
 public class GlobalSettings : Object {
     public static int PROXY_MODE_NONE = 0;
     public static int SERVER_RESPOND_TIMEOUT = 10;
-    private string TRANSLATOR_PATH = "/usr/share/translator";
+    public static string SCHEMA_NAME = "com.github.rapidfingers.translator";
+    private string TRANSLATOR_PATH = "/usr/share/com.github.rapidfingers.translator";
     private string _sourceStartLang = "en";
     private string _destStartLang = "ru";
     private LangInfo[] _langs;
@@ -14,7 +15,7 @@ public class GlobalSettings : Object {
     private Settings _settings;
 
     private GlobalSettings() {
-      _settings = new Settings ("skyprojects.eos.translator");
+      _settings = new Settings (SCHEMA_NAME);
     }
 
     public static GlobalSettings instance() {

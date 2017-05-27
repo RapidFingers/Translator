@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2017 Grabli66 <grabli66@gmail.com> -->
+<component type="desktop">
+  <id>com.github.rapidfingers.translator.desktop</id>
+  <metadata_license>MIT</metadata_license>
+  <name>Translator</name>
+  <developer_name>RapidFingers</developer_name>
+  <summary>Simple translator</summary>
+  <description>
+    <p>Simple and fast translator for Elementary OS</p>    
+  </description>
+  <url type="homepage">https://https://github.com/RapidFingers/Translator</url>
+  <url type="bugtracker">https://github.com/RapidFingers/Translator/issues</url>
+  <screenshots>
+        <screenshot type="default">
+            <image>https://raw.githubusercontent.com/rapidfingers/translator/master/data/screenshots/screenshot1.png</image>
+        </screenshot>
+  </screenshots>
+  <custom>
+     <value key="x-appcenter-color-primary">#28619F</value>
+     <value key="x-appcenter-color-primary-text">rgb(255, 255, 255)</value>
+     <value key="x-appcenter-suggested-price">1</value>
+  </custom>
+</component>
