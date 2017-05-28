@@ -5,9 +5,9 @@
   <metadata_license>MIT</metadata_license>
   <name>Translator</name>
   <developer_name>RapidFingers</developer_name>
-  <summary>Simple translator</summary>
+  <summary>Translator</summary>
   <description>
-    <p>Simple and fast translator for Elementary OS</p>    
+    <p>Simple and fast translator</p>
   </description>
   <url type="homepage">https://github.com/RapidFingers/Translator</url>
   <url type="bugtracker">https://github.com/RapidFingers/Translator/issues</url>
