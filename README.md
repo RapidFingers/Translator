@@ -4,6 +4,8 @@ Native Elementary OS translater app. Uses Yandex API.
 * Fast
 * Beautiful :)
 
+![Screenshot](https://raw.githubusercontent.com/rapidfingers/translator/master/data/screenshots/screenshot1.png)
+
 # MIT License
 Copyright 2007 Grabli66
 
