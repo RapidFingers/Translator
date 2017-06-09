@@ -1,18 +1,18 @@
+
+// Main translator window
 public class TranslateWindow : Gtk.ApplicationWindow {
     private TranslateService service;
     private DictionaryService _dictService;
 
     private GlobalSettings global = GlobalSettings.instance();
 
-    /*
-    *   Header layout
-    */
+    //  Header layout
     private Gtk.Box _headerPane;
 
     private Gtk.HeaderBar _leftHeader;
     private Gtk.Button changeButton;
-    private Gtk.ComboBox leftLangCombo;
-    private Gtk.ComboBox rightLangCombo;
+    private PopoverCombo leftLangCombo;    
+    private PopoverCombo rightLangCombo;
     private Gtk.ListStore langStore;
     private Gtk.ToggleButton voiceButton;
     private Gtk.ToggleButton dictButton;
@@ -41,18 +41,40 @@ public class TranslateWindow : Gtk.ApplicationWindow {
     private static int DEFAULT_WIDTH = 0;
     private static int DEFAULT_HEIGHT = 640;
 
-    private const int MAX_CHARS = 500;                                 // Max size of translating text
+    // Max size of translating text
+    private const int MAX_CHARS = 500;
 
     private LangInfo[] langs;
 
     private string leftLang;
     private string rightLang;
 
+    // Create language combos
+    private void languageCombo () {
+        leftLangCombo = new PopoverCombo ();
+
+        rightLangCombo = new PopoverCombo ();
+        rightLangCombo.set_margin_right(10);
+
+        /*leftLangCombo = new Gtk.ComboBox();
+        var renderer = new Gtk.CellRendererText ();
+        leftLangCombo.pack_start (renderer, true);
+        leftLangCombo.add_attribute (renderer, "text", 0);
+        leftLangCombo.active = 0;*/
+        
+		/*rightLangCombo = new Gtk.ComboBox();
+        rightLangCombo.set_margin_right(10);
+        rightLangCombo.pack_start (renderer, true);
+        rightLangCombo.add_attribute (renderer, "text", 0);
+        rightLangCombo.active = 0;*/
+    }
+
+    // Constructor
     public TranslateWindow() {
         langs = global.getLangs();
 
         service = new TranslateService();
-        service.result.connect(onTranslate);
+        //service.result.connect(onTranslate);
 
         _dictService = new DictionaryService();
         _dictService.result.connect(OnDictResult);
@@ -73,23 +95,13 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         _leftHeader = new Gtk.HeaderBar ();
         _leftHeader.set_show_close_button (true);
 
-        leftLangCombo = new Gtk.ComboBox();
-        var renderer = new Gtk.CellRendererText ();
-        leftLangCombo.pack_start (renderer, true);
-        leftLangCombo.add_attribute (renderer, "text", 0);
-        leftLangCombo.active = 0;
-
-
-		rightLangCombo = new Gtk.ComboBox();
-        rightLangCombo.set_margin_right(10);
-        rightLangCombo.pack_start (renderer, true);
-        rightLangCombo.add_attribute (renderer, "text", 0);
-        rightLangCombo.active = 0;
+        // Create language combo
+        languageCombo ();
 
         changeButton = new Gtk.Button();
         changeButton.set_image(Assets.getImage("images/loop.svg"));
         changeButton.set_tooltip_text(_("Switch language"));
-        changeButton.clicked.connect(onSwap);
+    //    changeButton.clicked.connect(onSwap);
 
         voiceButton = new Gtk.ToggleButton();
         voiceButton.set_image (Assets.getImage("images/mic.svg"));
@@ -98,7 +110,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         dictButton = new Gtk.ToggleButton();
         dictButton.set_image (Assets.getImage("images/book.svg"));
         dictButton.set_tooltip_text(_("Dictionary"));
-        dictButton.toggled.connect(OnDictToggle);
+ //       dictButton.toggled.connect(OnDictToggle);
 
         settingsButton = new Gtk.ToggleButton();
         settingsButton.set_image (Assets.getImage("images/cog.svg"));
@@ -169,7 +181,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         topText.set_margin_right(7);
         topText.override_font(fd);
         topText.set_wrap_mode(Gtk.WrapMode.WORD_CHAR);
-        topText.buffer.changed.connect(onUpdate);
+      //  topText.buffer.changed.connect(onUpdate);
         var topScroll = new Gtk.ScrolledWindow (null, null);
         topScroll.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
         topScroll.add (topText);
@@ -250,7 +262,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         this.add(_contentBox);
 
         populateLangs();
-        refreshLangLabels();
+       /* refreshLangLabels();*/
 
         HideDictionary();
 
@@ -258,7 +270,12 @@ public class TranslateWindow : Gtk.ApplicationWindow {
                 .dark-separator {
                     color: #888;
                 }
-                ";
+                .popovercombo {
+                    border: 1px solid #AAA;
+                    box-shadow: 1px 1px 1px #DDD;
+                    border-radius: 3px;
+                }
+        ";
         Granite.Widgets.Utils.set_theming_for_screen (this.get_screen (), style, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         this.destroy.connect(OnWindowDestroy);
@@ -290,8 +307,19 @@ public class TranslateWindow : Gtk.ApplicationWindow {
       _contentSeparator.hide();
     }
 
+    // Populate combo with languages
     private void populateLangs() {
-        langStore = new Gtk.ListStore (2, typeof (string), typeof (string));
+        //var leftInd = global.getLangIndex(global.getSourceStartLang());
+        //var rightInd = global.getLangIndex(global.getDestStartLang());
+        rightLangCombo.setLanguages (langs);
+        rightLangCombo.setActive (global.getDestStartLang());
+        rightLangCombo.changed.connect(onRightComboChange);
+
+        leftLangCombo.setLanguages (langs);
+        leftLangCombo.setActive (global.getSourceStartLang());
+        leftLangCombo.changed.connect(onLeftComboChange);
+
+        /*langStore = new Gtk.ListStore (2, typeof (string), typeof (string));
 		    Gtk.TreeIter iter;
 
         foreach (var l in langs) {
@@ -312,12 +340,12 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         rightLangCombo.active = rightInd;
 
         leftLangCombo.changed.connect(onLeftComboChange);
-		    rightLangCombo.changed.connect(onRightComboChange);
+		rightLangCombo.changed.connect(onRightComboChange);
 
         leftLang = getLeftId();
-        rightLang = getRightId();
+        rightLang = getRightId();*/
     }
-
+/*
     private void ClearDictText() {
       _wordInput.set_text("");
       _dictText.buffer.text = "";
@@ -329,10 +357,10 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         topLabelLang.set_markup(@"<span size=\"small\" color=\"#555555\">$llang</span>");
         bottomLabelLang.set_markup(@"<span size=\"small\" color=\"#555555\">$rlang</span>");
         _dictLangLabel.set_markup(@"<span size=\"small\" color=\"#555555\">$llang - $rlang</span>");
-    }
+    }*/
 
-
-    private string getLeftId() {
+    // Get language id from left combobox
+    /*private string getLeftId() {
         Value val;
         Gtk.TreeIter iter;
         leftLangCombo.get_active_iter (out iter);
@@ -340,6 +368,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         return (string)val;
     }
 
+    // Get language from left combobox
     private string getLeftLang() {
         Value val;
         Gtk.TreeIter iter;
@@ -390,17 +419,18 @@ public class TranslateWindow : Gtk.ApplicationWindow {
             refreshLangLabels();
             onUpdate();
         }
-    }
+    }*/
 
     private void onLeftComboChange() {
-        onLangChange(false);
+        //onLangChange(false);
     }
 
-    private void onRightComboChange() {
-        onLangChange(true);
+    private void onRightComboChange(LangInfo info) {
+        //onLangChange(true);
+        stderr.printf (info.name);
     }
 
-    private void onSwap() {
+    /*private void onSwap() {
         var id = getLeftId();
         rightLangCombo.set_active_id(id);
     }
@@ -431,7 +461,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
             return;
         }
         bottomText.buffer.text = string.joinv("", text);
-    }
+    }*/
 
     // Search in dictionary
     private void OnDictSearch() {

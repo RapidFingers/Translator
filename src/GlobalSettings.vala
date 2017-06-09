@@ -1,8 +1,5 @@
-public class LangInfo : Object {
-    public string id { get; set; }
-    public string name { get; set; }
-}
 
+// Global settings
 public class GlobalSettings : Object {
     public static int PROXY_MODE_NONE = 0;
     public static int SERVER_RESPOND_TIMEOUT = 10;

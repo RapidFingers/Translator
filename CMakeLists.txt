@@ -25,13 +25,15 @@ include (ValaPrecompile)
 add_definitions (-DGETTEXT_PACKAGE="${CMAKE_PROJECT_NAME}")
 
 find_package(PkgConfig)
-pkg_check_modules(DEPS REQUIRED gtk+-3.0 libsoup-2.4 gee-0.8 gio-2.0 granite gthread-2.0 json-glib-1.0)
+pkg_check_modules(DEPS REQUIRED gtk+-3.0 gdk-3.0 libsoup-2.4 gee-0.8 gio-2.0 granite gthread-2.0 json-glib-1.0)
 add_definitions(${DEPS_CFLAGS})
 link_libraries(${DEPS_LIBRARIES})
 link_directories(${DEPS_LIBRARY_DIRS})
 
 vala_precompile(VALA_C ${EXEC_NAME}
     src/Main.vala
+    src/LangInfo.vala
+    src/widgets/PopoverCombo.vala
     src/TranslatorApplication.vala
     src/TranslatorWindow.vala
     src/GlobalSettings.vala
@@ -42,6 +44,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     src/WebJsonClient.vala
 PACKAGES
     gtk+-3.0
+    gdk-3.0
     granite
     libsoup-2.4
     json-glib-1.0
