@@ -1,4 +1,9 @@
-translate (0.7.1) precise; urgency=low
+translate (0.7.2) precise; urgency=low
+  * New language select
+  * More languages
+ -- Grabli66 <grabli66@gmail.com>  Tue, 11 June 2017 19:45:00 -0500
+
+translate (0.7.2) precise; urgency=low
   * Fix header height
   * Minor bug fix
  -- Grabli66 <grabli66@gmail.com>  Tue, 17 October 2016 19:45:00 -0500
