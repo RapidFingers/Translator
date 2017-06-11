@@ -72,7 +72,7 @@ public class PopoverCombo : Gtk.ToggleButton {
 
         popover = new Gtk.Popover (this);
         popover.position = Gtk.PositionType.BOTTOM;
-        popover.set_size_request (320, 120);
+        popover.set_size_request (320, 220);
         popover.add (popBox);
 
         popover.hide ();
@@ -110,7 +110,7 @@ public class PopoverCombo : Gtk.ToggleButton {
             widget.has_focus = false;
             widget.set_size_request (70, 30);
             langBox.add (widget);
-            widget.parent.has_focus = false;
+            widget.parent.can_focus = false;
             var data = new LangData (lang, widget);
             widget.set_data ("lang", data);            
             langMap[lang.id] = data;
@@ -123,5 +123,12 @@ public class PopoverCombo : Gtk.ToggleButton {
         label.label = activeLang.info.name;
         var p = activeLang.widget.parent as Gtk.FlowBoxChild;                
         langBox.select_child (p);
+        changed (activeLang.info);
+    }
+
+    // Get active language info
+    public LangInfo getActive () {
+        if (activeLang == null) return null;
+        return activeLang.info;
     }
 }

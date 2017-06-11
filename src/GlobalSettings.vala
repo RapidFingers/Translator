@@ -84,7 +84,12 @@ public class GlobalSettings : Object {
 
         res.add(new LangInfo() {
             id = "de",
-            name = _("Deutsch")
+            name = _("German")
+        });
+
+        res.add(new LangInfo() {
+            id = "pl",
+            name = _("Polish")
         });
 
         res.add(new LangInfo() {
@@ -100,6 +105,72 @@ public class GlobalSettings : Object {
         res.add(new LangInfo() {
             id = "nl",
             name = _("Dutch")
+        });
+
+        res.add(new LangInfo() {
+            id = "it",
+            name = _("Italian")
+        });
+
+        res.add(new LangInfo() {
+            id = "la",
+            name = _("Latin")
+        });
+
+        res.add(new LangInfo() {
+            id = "el",
+            name = _("Greek")
+        });
+
+        res.add(new LangInfo() {
+            id = "fi",
+            name = _("Finnish")
+        });
+
+        res.add(new LangInfo() {
+            id = "sv",
+            name = _("Swedish")
+        });
+
+        res.add(new LangInfo() {
+            id = "tr",
+            name = _("Turkish")
+        });
+
+        res.add(new LangInfo() {
+            id = "zh",
+            name = _("Chinese")
+        });
+
+        res.add(new LangInfo() {
+            id = "ko",
+            name = _("Korean")
+        });
+
+        res.add(new LangInfo() {
+            id = "ja",
+            name = _("Japanese")
+        });
+
+        res.add(new LangInfo() {
+            id = "pt",
+            name = _("Portuguese")
+        });
+
+        res.add(new LangInfo() {
+            id = "cs",
+            name = _("Czech")
+        });
+
+        res.add(new LangInfo() {
+            id = "et",
+            name = _("Estonian")
+        });
+
+        res.sort ((e1, e2) => {
+            if (e1.name > e2.name) return 1;
+            if (e1.name == e2.name) return 0;
+            return -1;
         });
 
         _langs = res.to_array();
