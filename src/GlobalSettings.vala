@@ -167,6 +167,11 @@ public class GlobalSettings : Object {
             name = _("Estonian")
         });
 
+        res.add(new LangInfo() {
+            id = "sr",
+            name = _("Serbian")
+        });
+
         res.sort ((e1, e2) => {
             if (e1.name > e2.name) return 1;
             if (e1.name == e2.name) return 0;
