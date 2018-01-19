@@ -60,12 +60,12 @@ install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/images DESTINATION "${PKGDATADIR}"
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/${CMAKE_PROJECT_NAME}.desktop DESTINATION "${DATADIR}/applications")
 install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/${CMAKE_PROJECT_NAME}.appdata.xml DESTINATION ${DATADIR}/metainfo/)
 
-install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/translator.svg DESTINATION ${HICOLOR_DIR}/16x16/apps/)
-install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/translator.svg DESTINATION ${HICOLOR_DIR}/24x24/apps/)
-install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/translator.svg DESTINATION ${HICOLOR_DIR}/32x32/apps/)
-install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/translator.svg DESTINATION ${HICOLOR_DIR}/48x48/apps/)
-install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/translator.svg DESTINATION ${HICOLOR_DIR}/64x64/apps/)
-install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/translator.svg DESTINATION ${HICOLOR_DIR}/128x128/apps/)
+install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.rapidfingers.translator.svg DESTINATION ${HICOLOR_DIR}/16x16/apps/)
+install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.rapidfingers.translator.svg DESTINATION ${HICOLOR_DIR}/24x24/apps/)
+install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.rapidfingers.translator.svg DESTINATION ${HICOLOR_DIR}/32x32/apps/)
+install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.rapidfingers.translator.svg DESTINATION ${HICOLOR_DIR}/48x48/apps/)
+install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.rapidfingers.translator.svg DESTINATION ${HICOLOR_DIR}/64x64/apps/)
+install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.rapidfingers.translator.svg DESTINATION ${HICOLOR_DIR}/128x128/apps/)
 
 include(GSettings)
 add_schema (data/${CMAKE_PROJECT_NAME}.gschema.xml)
