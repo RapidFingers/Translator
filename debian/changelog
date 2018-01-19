@@ -1,3 +1,8 @@
+translate (0.7.3) precise; urgency=low
+  * Serbian language
+  * Better desktop info
+ -- Grabli66 <grabli66@gmail.com>  Tue, 19 January 2018 20:22:00 -0500
+
 translate (0.7.2) precise; urgency=low
   * New language select
   * More languages
