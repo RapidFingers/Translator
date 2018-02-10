@@ -1,26 +1,87 @@
-
 // Global settings
 public class GlobalSettings : Object {
+    /// No proxy mode
     public static int PROXY_MODE_NONE = 0;
+
+    /// Timeout for server respond
     public static int SERVER_RESPOND_TIMEOUT = 10;
+
+    /// Name of settings schema
     public static string SCHEMA_NAME = "com.github.rapidfingers.translator";
+
+    /// Path of translator
     private string TRANSLATOR_PATH = "/usr/share/com.github.rapidfingers.translator";
+
+    /// Source lang
     private string _sourceStartLang = "en";
+
+    /// Destination lang
     private string _destStartLang = "ru";
-    private LangInfo[] _langs;
-    private static GlobalSettings _instance;
+
+    /// Possible languages
+    private Gee.ArrayList<LangInfo> _langs;
+    
+    /// Settings of app
     private Settings _settings;
 
-    private GlobalSettings() {
-      _settings = new Settings (SCHEMA_NAME);
+    /// Instance
+    private static GlobalSettings _instance;
+
+    /// Add language to list
+    private void addLang(string id, string name) {
+        _langs.add(new LangInfo() {
+            id = id,
+            name = _(name)
+        });
     }
 
+    /// Init languages
+    private void initLanguages() {
+        _langs = new Gee.ArrayList<LangInfo>();
+        addLang("en", _("English"));
+        addLang("ru", _("Russian"));
+        addLang("uk", _("Ukrainian"));
+        addLang("de", _("German"));
+        addLang("pl", _("Polish"));
+        addLang("fr", _("French"));
+        addLang("es", _("Spanish"));
+        addLang("nl", _("Dutch"));
+        addLang("it", _("Italian"));
+        addLang("la", _("Latin"));
+        addLang("el", _("Greek"));
+        addLang("fi", _("Finnish"));
+        addLang("sv", _("Swedish"));
+        addLang("tr", _("Turkish"));
+        addLang("zh", _("Chinese"));
+        addLang("ko", _("Korean"));
+        addLang("ja", _("Japanese"));
+        addLang("pt", _("Portuguese"));
+        addLang("cs", _("Czech"));
+        addLang("et", _("Estonian"));
+        addLang("sr", _("Serbian"));
+        addLang("sk", _("Slovak"));
+
+        _langs.sort ((e1, e2) => {
+            if (e1.name > e2.name) return 1;
+            if (e1.name == e2.name) return 0;
+            return -1;
+        });
+    }
+
+    /// Private constructor
+    private GlobalSettings() {
+      _settings = new Settings (SCHEMA_NAME);
+      initLanguages();
+    }
+
+    /// Get instance of global settings
     public static GlobalSettings instance() {
       if (_instance != null) return _instance;
       _instance = new GlobalSettings();
       return _instance;
     }
 
+    /// Set start language for source
     public void setSourceStartLang(string e) {
       var lngs = getLangs();
       foreach (var l in lngs) {
@@ -31,10 +92,12 @@ public class GlobalSettings : Object {
       }
     }
 
+    /// Return start source language
     public string getSourceStartLang() {
       return _sourceStartLang;
     }
 
+    /// Set destination start language
     public void setDestStartLang(string e) {
       var lngs = getLangs();
       foreach (var l in lngs) {
@@ -45,10 +108,13 @@ public class GlobalSettings : Object {
       }
     }
 
+    /// Return destination start language
     public string getDestStartLang() {
       return _destStartLang;
     }
 
+    /// Return uri for proxy
+    /// Get proxy settings from system
     public static Soup.URI getProxyUri() {
         var settings = new Settings("org.gnome.system.proxy");
         var mode = settings.get_enum("mode");
@@ -62,127 +128,13 @@ public class GlobalSettings : Object {
         var proxyUri = new Soup.URI(@"http://$host:$port");
         return proxyUri;
     }
-
-    public LangInfo[] getLangs() {
-        if (_langs != null) return _langs;
-
-        var res = new Gee.ArrayList<LangInfo>();
-        res.add(new LangInfo() {
-            id = "en",
-            name = _("English")
-        });
-
-        res.add(new LangInfo() {
-            id = "ru",
-            name = _("Russian")
-        });
-
-        res.add(new LangInfo() {
-            id = "uk",
-            name = _("Ukrainian")
-        });
-
-        res.add(new LangInfo() {
-            id = "de",
-            name = _("German")
-        });
-
-        res.add(new LangInfo() {
-            id = "pl",
-            name = _("Polish")
-        });
-
-        res.add(new LangInfo() {
-            id = "fr",
-            name = _("French")
-        });
-
-        res.add(new LangInfo() {
-            id = "es",
-            name = _("Spanish")
-        });
-
-        res.add(new LangInfo() {
-            id = "nl",
-            name = _("Dutch")
-        });
-
-        res.add(new LangInfo() {
-            id = "it",
-            name = _("Italian")
-        });
-
-        res.add(new LangInfo() {
-            id = "la",
-            name = _("Latin")
-        });
-
-        res.add(new LangInfo() {
-            id = "el",
-            name = _("Greek")
-        });
-
-        res.add(new LangInfo() {
-            id = "fi",
-            name = _("Finnish")
-        });
-
-        res.add(new LangInfo() {
-            id = "sv",
-            name = _("Swedish")
-        });
-
-        res.add(new LangInfo() {
-            id = "tr",
-            name = _("Turkish")
-        });
-
-        res.add(new LangInfo() {
-            id = "zh",
-            name = _("Chinese")
-        });
-
-        res.add(new LangInfo() {
-            id = "ko",
-            name = _("Korean")
-        });
-
-        res.add(new LangInfo() {
-            id = "ja",
-            name = _("Japanese")
-        });
-
-        res.add(new LangInfo() {
-            id = "pt",
-            name = _("Portuguese")
-        });
-
-        res.add(new LangInfo() {
-            id = "cs",
-            name = _("Czech")
-        });
-
-        res.add(new LangInfo() {
-            id = "et",
-            name = _("Estonian")
-        });
-
-        res.add(new LangInfo() {
-            id = "sr",
-            name = _("Serbian")
-        });
-
-        res.sort ((e1, e2) => {
-            if (e1.name > e2.name) return 1;
-            if (e1.name == e2.name) return 0;
-            return -1;
-        });
-
-        _langs = res.to_array();
-
-        return _langs;
+    
+    /// Return possible lang array
+    public LangInfo[] getLangs() {        
+        return _langs.to_array();
     }
 
+    /// Return language index
     public int getLangIndex(string langId) {
       var lngs = getLangs();
       for (var i=0; i < lngs.length; i++) {
