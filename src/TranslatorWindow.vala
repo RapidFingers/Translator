@@ -28,6 +28,9 @@ public class TranslateWindow : Gtk.ApplicationWindow {
     private Gtk.Separator _contentSeparator;
     private Gtk.TextView topText;
     private Gtk.TextView bottomText;
+    /// Translate progress spinner
+    private Gtk.Spinner _progressSpinner;
+
     private Gtk.Label topLabelLen;
     private Gtk.Label topLabelLang;
     private Gtk.Label bottomLabelLang;
@@ -52,6 +55,9 @@ public class TranslateWindow : Gtk.ApplicationWindow {
     // Right language info
     private LangInfo rightLang;
 
+    /// Is translate in progress
+    private bool _isTranslating = false;
+
     // Create language combos
     private void languageCombo () {
         leftLangCombo = new PopoverCombo ();
@@ -61,6 +67,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
     }
 
     // Constructor
+    // TODO: separate to methods
     public TranslateWindow() {
         langs = global.getLangs();
 
@@ -177,6 +184,9 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         topScroll.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
         topScroll.add (topText);
 
+        /// Translate destination
+        var bottomOverlay = new Gtk.Overlay();        
+
         bottomText = new Gtk.TextView();
         bottomText.set_editable(false);
         bottomText.set_margin_top(7);
@@ -185,10 +195,17 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         bottomText.override_font(fd);
         bottomText.set_cursor_visible(false);
         bottomText.set_wrap_mode(Gtk.WrapMode.WORD_CHAR);
-
+        
         var bottomScroll = new Gtk.ScrolledWindow (null, null);
         bottomScroll.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
-        bottomScroll.add (bottomText);
+        bottomScroll.add (bottomText);                
+        
+        _progressSpinner = new Gtk.Spinner ();
+        _progressSpinner.active = false;
+        _progressSpinner.margin = 70;
+        
+        bottomOverlay.add(bottomScroll);
+        bottomOverlay.add_overlay(_progressSpinner);        
 
         var topBox = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
         var topLabelBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
@@ -211,7 +228,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         bottomLabelLang.set_margin_bottom(3);
         bottomLabelBox.pack_start(bottomLabelLang, false, true, 5);
 
-        bottomBox.pack_start(bottomScroll);
+        bottomBox.pack_start(bottomOverlay);
         bottomBox.pack_start(bottomLabelBox, false, true, 0);
 
         paned.pack1(topBox, true, true);
@@ -255,7 +272,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         populateLangs();
         refreshLangLabels();
 
-        HideDictionary();
+        hideDictionary();
 
         var style = @"
                 .dark-separator {
@@ -272,15 +289,17 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         this.destroy.connect(onWindowDestroy);
     }
 
+    /// On toggle dictionary panel
     private void onDictToggle() {
       if (!dictButton.active) {
-        HideDictionary();
+        hideDictionary();
       } else {
-        ShowDictionary();
+        showDictionary();
       }
     }
 
-    private void ShowDictionary() {
+    /// Show dictionary
+    private void showDictionary() {
       _rightHeader.no_show_all = false;
       _rightHeader.show_all();
       _rightBox.no_show_all = false;
@@ -289,7 +308,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
       _contentSeparator.show_all();
     }
 
-    private void HideDictionary() {
+    private void hideDictionary() {
       _rightHeader.no_show_all = true;
       _rightHeader.hide();
       _rightBox.no_show_all = true;
@@ -381,6 +400,8 @@ public class TranslateWindow : Gtk.ApplicationWindow {
 
     // On text update
     private void onUpdate() {
+        if (_isTranslating) return;        
+
         if (topText.buffer.text.length < 1) {
             bottomText.buffer.text = "";
             topLabelLen.set_markup(@"<span size=\"small\" color=\"#555555\">0/$MAX_CHARS</span>");
@@ -396,10 +417,16 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         }
         topLabelLen.set_markup(@"<span size=\"small\" color=\"#555555\">$len/$MAX_CHARS</span>");
 
-        service.Translate(leftLang.id, rightLang.id, topText.buffer.text);
+        _isTranslating = true;
+        _progressSpinner.active = true;
+        service.Translate(leftLang.id, rightLang.id, topText.buffer.text);        
     }
 
+    /// On translate complete
     private void onTranslate(string[] text) {
+        _isTranslating = false;
+        _progressSpinner.active = false;
+
         if ((text == null) || (text.length < 1)) return;
         if (topText.buffer.text.length < 1) {
             bottomText.buffer.text = "";
@@ -434,6 +461,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
       }
     }
 
+    /// On window destroy
     private void onWindowDestroy() {
       var global = GlobalSettings.instance();
       global.SaveSourceLang(leftLang.id);

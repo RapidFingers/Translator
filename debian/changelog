@@ -1,3 +1,8 @@
+translate (1.0.7) precise; urgency=low
+  * Slovak language
+  * Translate progress
+ -- Grabli66 <grabli66@gmail.com>  Tue, 10 February 2018 20:22:00 -0500
+
 translate (0.7.3) precise; urgency=low
   * Serbian language
   * Better desktop info

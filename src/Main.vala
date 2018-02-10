@@ -2,12 +2,14 @@ public class Main : Object {
   private static string? source = null;
   private static string? dest = null;
 
+  /// App console options
   private const GLib.OptionEntry[] options = {
     { "source", 's', 0, OptionArg.STRING, ref source, "Source language", "SOURCE" },
     { "dest", 'd', 0, OptionArg.STRING, ref dest, "Destination language ", "DESTINATION" },
     { null }
   };
 
+  /// Entry point
   public static int main (string[] args) {
     try {
         var opt_context = new OptionContext ("- Translator app");

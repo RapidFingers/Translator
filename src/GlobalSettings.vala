@@ -10,6 +10,7 @@ public class GlobalSettings : Object {
     public static string SCHEMA_NAME = "com.github.rapidfingers.translator";
 
     /// Path of translator
+    /// TODO: remove
     private string TRANSLATOR_PATH = "/usr/share/com.github.rapidfingers.translator";
 
     /// Source lang
@@ -146,23 +147,28 @@ public class GlobalSettings : Object {
       return -1;
     }
 
+    /// TODO: Remove?
     public string getPath(string name) {
         string path = @"$(TRANSLATOR_PATH)/$(name)";
         return path;
     }
 
+    /// Get source lang from settings
     public string LoadSourceLang() {
       return _settings.get_string("source-lang");
     }
 
+    /// Get destination lang from settings
     public string LoadDestLang() {
       return _settings.get_string("dest-lang");
     }
 
+    /// Save source lang to settings
     public void SaveSourceLang(string s) {
       _settings.set_string("source-lang", s);
     }
 
+    /// Save destination lang to settings
     public void SaveDestLang(string s) {
       _settings.set_string("dest-lang", s);
     }
