@@ -36,8 +36,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     src/widgets/PopoverCombo.vala
     src/TranslatorApplication.vala
     src/TranslatorWindow.vala
-    src/GlobalSettings.vala
-    src/Assets.vala
+    src/GlobalSettings.vala    
     src/AsyncTaskExecuter.vala
     src/TranslatorService.vala
     src/DictionaryService.vala
@@ -56,7 +55,6 @@ add_executable(${EXEC_NAME} ${VALA_C})
 add_subdirectory (po)
 
 install (TARGETS ${EXEC_NAME} RUNTIME DESTINATION bin)
-install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/images DESTINATION "${PKGDATADIR}")
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/${CMAKE_PROJECT_NAME}.desktop DESTINATION "${DATADIR}/applications")
 install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/${CMAKE_PROJECT_NAME}.appdata.xml DESTINATION ${DATADIR}/metainfo/)
 

@@ -54,7 +54,7 @@ public class PopoverCombo : Gtk.ToggleButton {
         label = new Gtk.Label ("");
         
         label.halign = Gtk.Align.START;
-        image = Assets.getImage ("images/caret-down.svg");
+        image = new Gtk.Image.from_icon_name("pan-down-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
         image.margin_right = 4;
         box.pack_start(label, true, true);
         box.pack_start(image, false, false);

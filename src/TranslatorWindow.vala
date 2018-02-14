@@ -108,22 +108,22 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         // Create language combo
         languageCombo ();
 
-        changeButton = new Gtk.Button();
-        changeButton.set_image(Assets.getImage("images/loop.svg"));
+        changeButton = new Gtk.Button.from_icon_name("media-playlist-repeat-symbolic");               
         changeButton.set_tooltip_text(_("Switch language"));
         changeButton.clicked.connect(onSwap);
 
         voiceButton = new Gtk.ToggleButton();
-        voiceButton.set_image (Assets.getImage("images/mic.svg"));
+        //voiceButton.set_image (Assets.getImage("images/mic.svg"));
         voiceButton.set_tooltip_text(_("Dictation"));
 
         dictButton = new Gtk.ToggleButton();
-        dictButton.set_image (Assets.getImage("images/book.svg"));
+        //dictButton.set_image (Assets.getImage("images/book.svg"));
+        dictButton.set_image(new Gtk.Image.from_icon_name("accessories-dictionary-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
         dictButton.set_tooltip_text(_("Dictionary"));
         dictButton.toggled.connect(onDictToggle);
 
         settingsButton = new Gtk.ToggleButton();
-        settingsButton.set_image (Assets.getImage("images/cog.svg"));
+        settingsButton.set_image (new Gtk.Image.from_icon_name("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
         settingsButton.set_tooltip_text(_("Settings"));
 
         _leftHeader.pack_start(leftLangCombo);
@@ -141,8 +141,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         _wordInput = new Gtk.Entry();
         _wordInput.set_size_request(200,20);
         _wordInput.activate.connect(onDictSearch);
-        _searchWordButton = new Gtk.Button();
-        _searchWordButton.set_image(Assets.getImage("images/search.svg"));
+        _searchWordButton = new Gtk.Button.from_icon_name("edit-find-symbolic");
         _searchWordButton.set_tooltip_text(_("Search"));
         _searchWordButton.clicked.connect(onDictSearch);
         _searchWordButton.margin_right = 6;
