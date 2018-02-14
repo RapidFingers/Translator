@@ -66,6 +66,24 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         rightLangCombo.set_margin_right(10);        
     }
 
+    // Apply styles
+    private void styleWindow() {
+        var style = @"
+            GtkTextView {
+                background-color: RGBA(255,0,0,0);
+            }        
+            .dark-separator {
+                color: #888;
+            }
+            .popovercombo {
+                border: 1px solid #AAA;
+                box-shadow: 1px 1px 1px #DDD;
+                border-radius: 3px;
+            }
+        ";
+        Granite.Widgets.Utils.set_theming_for_screen (this.get_screen (), style, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+    }
+
     // Constructor
     // TODO: separate to methods
     public TranslateWindow() {
@@ -80,12 +98,6 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         this.window_position = Gtk.WindowPosition.CENTER;
         this.set_gravity(Gdk.Gravity.CENTER);
         this.set_resizable(false);
-
-        Gdk.RGBA bgColor = Gdk.RGBA();
-        bgColor.red = 1;
-        bgColor.green = 1;
-        bgColor.blue = 1;
-        bgColor.alpha = 1;
 
         _headerPane = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
 
@@ -170,7 +182,6 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         _contentBox.pack_start(_rightBox, true, true);
 
         var paned = new Gtk.Paned(Gtk.Orientation.VERTICAL);
-        paned.override_background_color(Gtk.StateFlags.NORMAL, bgColor);
         _leftBox.pack_start(paned);
 
         topText = new Gtk.TextView();
@@ -212,8 +223,8 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         topLabelLang = new Gtk.Label("");
         topLabelLang.set_margin_bottom(3);
 
-        topLabelLen = new Gtk.Label("");
-        topLabelLen.set_markup(@"<span size=\"small\" color=\"#555555\">0/$MAX_CHARS</span>");
+        topLabelLen = new Gtk.Label("");        
+        topLabelLen.set_markup(@"<span size=\"small\">0/$MAX_CHARS</span>");
         topLabelLen.set_margin_bottom(3);
 
         topLabelBox.pack_start(topLabelLang, false, true, 5);
@@ -236,11 +247,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
 
         var dictBox = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
         var dictLabelBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
-        var bgColor2 = Gdk.RGBA();
-        bgColor.red = 0.9;
-        bgColor.green = 0.9;
-        bgColor.blue = 0.9;
-        bgColor.alpha = 1;
+
         _dictText = new Gtk.TextView();
         _dictText.set_editable(false);
         _dictText.set_margin_top(7);
@@ -249,13 +256,11 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         _dictText.set_wrap_mode(Gtk.WrapMode.WORD);
         _dictText.set_cursor_visible(false);
         var dictScroll = new Gtk.ScrolledWindow (null, null);
-        dictScroll.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
-        _dictText.override_background_color(Gtk.StateFlags.NORMAL, bgColor2);
-        dictScroll.override_background_color(Gtk.StateFlags.NORMAL, bgColor2);
+        dictScroll.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);        
         dictScroll.add (_dictText);
 
         _dictLangLabel = new Gtk.Label("");
-        _dictLangLabel.set_markup(@"<span size=\"small\" color=\"#555555\">en-ru</span>");
+        _dictLangLabel.set_markup(@"<span size=\"small\">en-ru</span>");
         _dictLangLabel.set_margin_bottom(3);
         dictLabelBox.pack_start(_dictLangLabel, false, true, 5);
 
@@ -272,19 +277,9 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         populateLangs();
         refreshLangLabels();
 
-        hideDictionary();
+        hideDictionary();        
 
-        var style = @"
-                .dark-separator {
-                    color: #888;
-                }
-                .popovercombo {
-                    border: 1px solid #AAA;
-                    box-shadow: 1px 1px 1px #DDD;
-                    border-radius: 3px;
-                }
-        ";
-        Granite.Widgets.Utils.set_theming_for_screen (this.get_screen (), style, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        styleWindow();
 
         this.destroy.connect(onWindowDestroy);
     }
@@ -340,9 +335,9 @@ public class TranslateWindow : Gtk.ApplicationWindow {
     private void refreshLangLabels() {
         var llang = getLeftLang().name;
         var rlang = getRightLang().name;
-        topLabelLang.set_markup(@"<span size=\"small\" color=\"#555555\">$llang</span>");
-        bottomLabelLang.set_markup(@"<span size=\"small\" color=\"#555555\">$rlang</span>");
-        _dictLangLabel.set_markup(@"<span size=\"small\" color=\"#555555\">$llang - $rlang</span>");
+        topLabelLang.set_markup(@"<span size=\"small\">$llang</span>");
+        bottomLabelLang.set_markup(@"<span size=\"small\">$rlang</span>");
+        _dictLangLabel.set_markup(@"<span size=\"small\">$llang - $rlang</span>");
     }
 
     // Get language id from left combobox
@@ -404,7 +399,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
 
         if (topText.buffer.text.length < 1) {
             bottomText.buffer.text = "";
-            topLabelLen.set_markup(@"<span size=\"small\" color=\"#555555\">0/$MAX_CHARS</span>");
+            topLabelLen.set_markup(@"<span size=\"small\">0/$MAX_CHARS</span>");
             return;
         }
 
@@ -415,7 +410,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
             topText.buffer.set_text(txt, MAX_CHARS);
             return;
         }
-        topLabelLen.set_markup(@"<span size=\"small\" color=\"#555555\">$len/$MAX_CHARS</span>");
+        topLabelLen.set_markup(@"<span size=\"small\">$len/$MAX_CHARS</span>");
 
         _isTranslating = true;
         _progressSpinner.active = true;
