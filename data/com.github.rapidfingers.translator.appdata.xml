@@ -47,10 +47,18 @@
         </ul>
 ​      </description>
 ​    </release>
-<release version="1.0.9" date="2018-02-14">
+    <release version="1.0.9" date="2018-02-14">
 ​      <description>
 ​         <ul>
             <li>Homepage fix</li>            
+        </ul>
+​      </description>
+​    </release>
+    <release version="1.1.0" date="2018-02-14">
+​      <description>
+​         <ul>
+            <li>System icons</li>
+            <li>Better dark theme look</li>
         </ul>
 ​      </description>
 ​    </release>
