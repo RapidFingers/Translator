@@ -6,6 +6,8 @@ Native Elementary OS translater app. Uses Yandex API.
 
 ![Screenshot](https://raw.githubusercontent.com/rapidfingers/translator/master/data/screenshots/screenshot1.png)
 
+# Donate
+
 <iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/embed/donate.xml?account=410013012437926&quickpay=donate&payment-type-choice=on&default-sum=100&targets=For+develop&target-visibility=on&project-name=Translator&project-site=&button-text=01&successURL=" width="439" height="117"></iframe>
 
 # MIT License
