@@ -6,14 +6,17 @@ public class TranslateService : AsyncTaskExecuter {
   private string _to;
   private string _text;
 
+  /// On result
   public signal void result(string[] text);
 
+  /// Constructor
   public TranslateService() {
     base();
   }
 
-  public override void OnExecute() {
-    var ntext = Soup.URI.encode(_text, null);
+  /// Task main working method
+  public override void OnExecute() throws TranslatorError {
+    var ntext = Soup.URI.encode(_text, null);    
     var request = @"https://translate.yandex.net/api/v1.5/tr.json/translate?key=$(API_KEY)&lang=$(_from)-$(_to)&text=$(ntext)";
     var root = WebJsonClient.Get(request);
     var data = new Gee.ArrayList<string>();
@@ -31,10 +34,12 @@ public class TranslateService : AsyncTaskExecuter {
     }
   }
 
+  /// On result
   public override void OnResult() {
     result(_result);
   }
 
+  /// Start to translate
   public void Translate(string from, string to, string text) {
     _from = from;
     _to = to;

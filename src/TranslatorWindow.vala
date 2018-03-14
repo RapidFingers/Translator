@@ -1,7 +1,9 @@
 
 // Main translator window
 public class TranslateWindow : Gtk.ApplicationWindow {
-    private TranslateService service;
+    /// Service for translating
+    private TranslateService _translateService;
+    /// Dictionary service
     private DictionaryService _dictService;
 
     private GlobalSettings global = GlobalSettings.instance();
@@ -40,6 +42,9 @@ public class TranslateWindow : Gtk.ApplicationWindow {
     private Gtk.TextTag _headerTag;
     private Gtk.TextTag _normalTag;
     private Gtk.Label _dictLangLabel;
+
+    /// Toast for messages
+    private Granite.Widgets.Toast _toast;
 
     private static int DEFAULT_WIDTH = 0;
     private static int DEFAULT_HEIGHT = 640;
@@ -84,16 +89,27 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         Granite.Widgets.Utils.set_theming_for_screen (this.get_screen (), style, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
     }
 
+    /// On service error
+    private void onServiceError(TranslatorError error) {
+        _isTranslating = false;
+        _progressSpinner.active = false;
+
+        _toast.title = _(error.message);
+        _toast.send_notification();
+    }
+
     // Constructor
     // TODO: separate to methods
     public TranslateWindow() {
         langs = global.getLangs();
 
-        service = new TranslateService();
-        service.result.connect(onTranslate);
+        _translateService = new TranslateService();
+        _translateService.result.connect(onTranslate);
+        _translateService.error.connect(onServiceError);
 
         _dictService = new DictionaryService();
         _dictService.result.connect(onDictResult);
+        _dictService.error.connect(onServiceError);
 
         this.window_position = Gtk.WindowPosition.CENTER;
         this.set_gravity(Gdk.Gravity.CENTER);
@@ -183,6 +199,8 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         var paned = new Gtk.Paned(Gtk.Orientation.VERTICAL);
         _leftBox.pack_start(paned);
 
+        var topOverlay = new Gtk.Overlay();
+
         topText = new Gtk.TextView();
         topText.set_margin_left(7);
         topText.set_margin_top(7);
@@ -193,6 +211,10 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         var topScroll = new Gtk.ScrolledWindow (null, null);
         topScroll.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
         topScroll.add (topText);
+
+        _toast = new Granite.Widgets.Toast("");
+        topOverlay.add(topScroll);
+        topOverlay.add_overlay(_toast);  
 
         /// Translate destination
         var bottomOverlay = new Gtk.Overlay();        
@@ -213,9 +235,10 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         _progressSpinner = new Gtk.Spinner ();
         _progressSpinner.active = false;
         _progressSpinner.margin = 70;
-        
+                
+
         bottomOverlay.add(bottomScroll);
-        bottomOverlay.add_overlay(_progressSpinner);        
+        bottomOverlay.add_overlay(_progressSpinner);
 
         var topBox = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
         var topLabelBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
@@ -229,7 +252,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         topLabelBox.pack_start(topLabelLang, false, true, 5);
         topLabelBox.pack_end(topLabelLen, false, true, 5);
 
-        topBox.pack_start(topScroll);
+        topBox.pack_start(topOverlay);
         topBox.pack_start(topLabelBox, false, true, 0);
 
         var bottomBox = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
@@ -378,12 +401,14 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         }
     }
 
+    /// On change value in left combobox
     private void onLeftComboChange() {
         onLangChange(false);
     }
 
+    /// On change value in right combobox
     private void onRightComboChange(LangInfo info) {
-        onLangChange(true);        
+        onLangChange(true);
     }
 
     // Swap languages
@@ -413,7 +438,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
 
         _isTranslating = true;
         _progressSpinner.active = true;
-        service.Translate(leftLang.id, rightLang.id, topText.buffer.text);        
+        _translateService.Translate(leftLang.id, rightLang.id, topText.buffer.text);        
     }
 
     /// On translate complete

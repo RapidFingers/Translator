@@ -32,6 +32,7 @@ link_directories(${DEPS_LIBRARY_DIRS})
 
 vala_precompile(VALA_C ${EXEC_NAME}
     src/Main.vala
+    src/utils/TranslatorError.vala
     src/LangInfo.vala
     src/widgets/PopoverCombo.vala
     src/TranslatorApplication.vala

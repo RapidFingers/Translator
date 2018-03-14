@@ -1,6 +1,10 @@
+/// For fetch json from url
 public class WebJsonClient : GLib.Object {
-  private static Json.Parser _parser;
+  /// No connection to server code
+  private const int NO_CONNECTION = 2;
 
+  /// Json parser
+  private static Json.Parser _parser;  
   private static Json.Parser parser {
     get {
       if (_parser == null) _parser = new Json.Parser();
@@ -8,7 +12,8 @@ public class WebJsonClient : GLib.Object {
     }
   }
 
-  public static Json.Object Get(string request) {
+  /// Get json from url
+  public static Json.Object Get(string request) throws TranslatorError {
     var session = new Soup.SessionSync ();
     session.timeout = GlobalSettings.SERVER_RESPOND_TIMEOUT;
     session.proxy_uri = GlobalSettings.getProxyUri();
@@ -16,7 +21,11 @@ public class WebJsonClient : GLib.Object {
     var url = new Soup.URI(request);
     var message = new Soup.Message.from_uri ("GET", url);
 
-    var status = session.send_message (message);
+    var status = session.send_message(message);
+    if (status == NO_CONNECTION) {
+      throw new TranslatorError.NoConnection(_("No connection to server"));
+    }
+    
     var mess = (string)message.response_body.data;
     parser.load_from_data (mess);    
     return parser.get_root ().get_object ();
