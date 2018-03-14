@@ -76,7 +76,10 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         var style = @"
             GtkTextView {
                 background-color: RGBA(255,0,0,0);
-            }        
+            }
+            GtkTextView:selected {
+                background-color: #3689e6;
+            }
             .dark-separator {
                 color: #888;
             }
