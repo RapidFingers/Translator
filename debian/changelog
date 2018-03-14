@@ -1,3 +1,9 @@
+translate (1.2.0) precise; urgency=low
+  * Toast message if no connection to server
+  * Fix ugly text selection color
+  * Minor bugfix
+ -- Grabli66 <grabli66@gmail.com>  Tue, 14 March 2018 19:39:00 -0500
+
 translate (1.1.0) precise; urgency=low
   * System icons
   * Better dark theme look

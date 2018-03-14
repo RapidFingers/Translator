@@ -62,5 +62,14 @@
         </ul>
 ​      </description>
 ​    </release>
+    <release version="1.2.0" date="2018-03-14">
+​      <description>
+​         <ul>
+            <li>Toast message if no connection to server</li>
+            <li>Fix ugly text selection color</li>
+            <li>Minor bugfix</li>
+        </ul>
+​      </description>
+​    </release>
 ​ </releases>
 </component>
