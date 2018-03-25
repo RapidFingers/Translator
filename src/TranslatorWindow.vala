@@ -1,6 +1,9 @@
 
 // Main translator window
 public class TranslateWindow : Gtk.ApplicationWindow {
+    /// Timeout before translate in milliseconds
+    const int TIMEOUT_BEFOR_TRANSLATE = 500;
+
     /// Service for translating
     private TranslateService _translateService;
     /// Dictionary service
@@ -59,6 +62,12 @@ public class TranslateWindow : Gtk.ApplicationWindow {
 
     // Right language info
     private LangInfo rightLang;
+
+    // Id of timeout
+    private uint? _timeoutId = null;
+
+    /// Text that is translating
+    private string _translatingText;
 
     /// Is translate in progress
     private bool _isTranslating = false;
@@ -210,7 +219,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         topText.set_margin_right(7);
         topText.override_font(fd);
         topText.set_wrap_mode(Gtk.WrapMode.WORD_CHAR);
-        topText.buffer.changed.connect(onUpdate);
+        topText.buffer.changed.connect(onTextChange);
         var topScroll = new Gtk.ScrolledWindow (null, null);
         topScroll.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
         topScroll.add (topText);
@@ -395,12 +404,15 @@ public class TranslateWindow : Gtk.ApplicationWindow {
             topText.buffer.text = bottomText.buffer.text;
         }
 
+        if (rightLa == rightLang)
+            needUpdate = false;
+
         if (needUpdate) {
             leftLang = leftLa;
             rightLang = rightLa;
             clearDictText();
             refreshLangLabels();
-            onUpdate();
+            onTextChange();
         }
     }
 
@@ -411,6 +423,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
 
     /// On change value in right combobox
     private void onRightComboChange(LangInfo info) {
+        
         onLangChange(true);
     }
 
@@ -420,28 +433,44 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         rightLangCombo.setActive (lang.id);        
     }
 
-    // On text update
-    private void onUpdate() {
-        if (_isTranslating) return;        
-
+    /// Start translate service
+    private bool startTranslate() {
+        Source.remove(_timeoutId);
+        _timeoutId = null;
         if (topText.buffer.text.length < 1) {
             bottomText.buffer.text = "";
             topLabelLen.set_markup(@"<span size=\"small\">0/$MAX_CHARS</span>");
-            return;
+            return true;
         }
 
-        if ((leftLang == null) || (rightLang == null)) return;
+        if ((leftLang == null) || (rightLang == null)) return true;
         var len = topText.buffer.text.length;
         if (len > MAX_CHARS) {
             var txt = topText.buffer.text.slice(0, MAX_CHARS);
             topText.buffer.set_text(txt, MAX_CHARS);
-            return;
+            return true;
         }
         topLabelLen.set_markup(@"<span size=\"small\">$len/$MAX_CHARS</span>");
 
         _isTranslating = true;
         _progressSpinner.active = true;
-        _translateService.Translate(leftLang.id, rightLang.id, topText.buffer.text);        
+        _translatingText = topText.buffer.text;
+        _translateService.Translate(leftLang.id, rightLang.id, _translatingText);
+        return true;
+    }
+
+    /// On text change in text edit
+    private void onTextChange() {
+        if (_isTranslating) return;
+
+        // Stop timer
+        if (_timeoutId != null) {
+            Source.remove(_timeoutId);
+            _timeoutId = null;
+        }
+        
+        // Start new timer
+        _timeoutId = Timeout.add(TIMEOUT_BEFOR_TRANSLATE, startTranslate);                
     }
 
     /// On translate complete
@@ -455,6 +484,9 @@ public class TranslateWindow : Gtk.ApplicationWindow {
             return;
         }
         bottomText.buffer.text = string.joinv("", text);
+
+        if (_translatingText != topText.buffer.text)
+            onTextChange();
     }
 
     // Search in dictionary
