@@ -1,3 +1,9 @@
+translate (1.2.1) precise; urgency=low
+  * Timeout before translate
+  * Fix useless translate on language combobox click
+  * Fixed lack of translation, when text is changed during the transfer
+ -- Grabli66 <grabli66@gmail.com>  Sun, 25 March 2018 18:06:00 -0500
+
 translate (1.2.0) precise; urgency=low
   * Toast message if no connection to server
   * Fix ugly text selection color
