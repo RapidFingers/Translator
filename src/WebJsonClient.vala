@@ -4,7 +4,7 @@ public class WebJsonClient : GLib.Object {
   private const int NO_CONNECTION = 2;
 
   /// Json parser
-  private static Json.Parser _parser;  
+  private static Json.Parser _parser;
   private static Json.Parser parser {
     get {
       if (_parser == null) _parser = new Json.Parser();
@@ -14,7 +14,7 @@ public class WebJsonClient : GLib.Object {
 
   /// Get json from url
   public static Json.Object Get(string request) throws TranslatorError {
-    var session = new Soup.SessionSync ();
+    var session = new Soup.Session ();
     session.timeout = GlobalSettings.SERVER_RESPOND_TIMEOUT;
     session.proxy_uri = GlobalSettings.getProxyUri();
 
@@ -25,9 +25,9 @@ public class WebJsonClient : GLib.Object {
     if (status == NO_CONNECTION) {
       throw new TranslatorError.NoConnection(_("No connection to server"));
     }
-    
+
     var mess = (string)message.response_body.data;
-    parser.load_from_data (mess);    
+    parser.load_from_data (mess);
     return parser.get_root ().get_object ();
   }
 }

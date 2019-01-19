@@ -1,4 +1,3 @@
-
 // Language data for lang dictionary
 class LangData {
 
@@ -19,19 +18,19 @@ class LangData {
 public class PopoverCombo : Gtk.ToggleButton {
 
     // Box for widgets
-    private Gtk.HBox box;
+    private Gtk.Box box;
 
     // Combo label
-    private Gtk.Label label;
+    private new Gtk.Label label;
 
     // Image for combo
-    private Gtk.Image image;
+    private new Gtk.Image image;
 
     // Popover for combo
     private Gtk.Popover popover;
 
     // box for popover
-    private Gtk.VBox popBox;
+    private Gtk.Box popBox;
 
     // Scroll for langs
     private Gtk.ScrolledWindow langScroll;
@@ -50,19 +49,19 @@ public class PopoverCombo : Gtk.ToggleButton {
 
     // Constructor
     public PopoverCombo () {
-        box = new Gtk.HBox (false, 0);
+        box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
         label = new Gtk.Label ("");
-        
+
         label.halign = Gtk.Align.START;
         image = new Gtk.Image.from_icon_name("pan-down-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-        image.margin_right = 4;
+        image.margin_end = 4;
         box.pack_start(label, true, true);
         box.pack_start(image, false, false);
         get_style_context().add_class("button");
         get_style_context().add_class("the-button-in-the-combobox");
         add (box);
 
-        popBox = new Gtk.VBox (false, 0);
+        popBox = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 
         langBox = new Gtk.FlowBox ();
         langBox.set_selection_mode (Gtk.SelectionMode.SINGLE);
@@ -82,7 +81,7 @@ public class PopoverCombo : Gtk.ToggleButton {
         });
 
         toggled.connect (() => {
-            if (active) {                
+            if (active) {
                 popover.show_all ();
                 setActive (activeLang.info.id);
             } else {

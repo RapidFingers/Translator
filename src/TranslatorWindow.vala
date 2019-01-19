@@ -16,20 +16,22 @@ public class TranslateWindow : Gtk.ApplicationWindow {
 
     private Gtk.HeaderBar _leftHeader;
     private Gtk.Button changeButton;
-    private PopoverCombo leftLangCombo;    
+    private PopoverCombo leftLangCombo;
     private PopoverCombo rightLangCombo;
-    private Gtk.ListStore langStore;
+    //private Gtk.ListStore langStore;
     private Gtk.ToggleButton voiceButton;
     private Gtk.ToggleButton dictButton;
-    private Gtk.ToggleButton settingsButton;
+    //private Gtk.ToggleButton settingsButton;
 
     private Gtk.Separator _headerSeparator;
     private Gtk.HeaderBar _rightHeader;
     private Gtk.Entry _wordInput;
     private Gtk.Button _searchWordButton;
+    private Gtk.Button _cleanButton;
 
     private Gtk.Box _contentBox;
     private Gtk.Box _leftBox;
+    private Gtk.Box _clbuttonBox;
     private Gtk.Separator _contentSeparator;
     private Gtk.TextView topText;
     private Gtk.TextView bottomText;
@@ -77,7 +79,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         leftLangCombo = new PopoverCombo ();
 
         rightLangCombo = new PopoverCombo ();
-        rightLangCombo.set_margin_right(10);        
+        rightLangCombo.set_margin_end(10);
     }
 
     // Apply styles
@@ -136,23 +138,21 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         // Create language combo
         languageCombo ();
 
-        changeButton = new Gtk.Button.from_icon_name("media-playlist-repeat-symbolic");               
+        changeButton = new Gtk.Button.from_icon_name("media-playlist-repeat-symbolic");
         changeButton.set_tooltip_text(_("Switch language"));
         changeButton.clicked.connect(onSwap);
 
         voiceButton = new Gtk.ToggleButton();
-        //voiceButton.set_image (Assets.getImage("images/mic.svg"));
         voiceButton.set_tooltip_text(_("Dictation"));
 
         dictButton = new Gtk.ToggleButton();
-        //dictButton.set_image (Assets.getImage("images/book.svg"));
         dictButton.set_image(new Gtk.Image.from_icon_name("accessories-dictionary-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
         dictButton.set_tooltip_text(_("Dictionary"));
         dictButton.toggled.connect(onDictToggle);
 
-        settingsButton = new Gtk.ToggleButton();
-        settingsButton.set_image (new Gtk.Image.from_icon_name("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
-        settingsButton.set_tooltip_text(_("Settings"));
+        //settingsButton = new Gtk.ToggleButton();
+        //settingsButton.set_image (new Gtk.Image.from_icon_name("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
+        //settingsButton.set_tooltip_text(_("Settings"));
 
         _leftHeader.pack_start(leftLangCombo);
         _leftHeader.pack_start(changeButton);
@@ -172,11 +172,11 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         _searchWordButton = new Gtk.Button.from_icon_name("edit-find-symbolic");
         _searchWordButton.set_tooltip_text(_("Search"));
         _searchWordButton.clicked.connect(onDictSearch);
-        _searchWordButton.margin_right = 6;
+        _searchWordButton.margin_end = 6;
 
         _rightHeader.pack_start(new Gtk.Label(_("Dictionary")));
         _rightHeader.pack_end(_searchWordButton);
-        _rightHeader.pack_end(_wordInput);        
+        _rightHeader.pack_end(_wordInput);
 
         _headerSeparator = new Gtk.Separator(Gtk.Orientation.VERTICAL);
         _headerSeparator.get_style_context().add_class("dark-separator");
@@ -184,7 +184,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         _headerPane.pack_start (_leftHeader, true, true, 0);
         _headerPane.pack_start (_headerSeparator, false, false, 0);
         _headerPane.pack_start (_rightHeader, true, true, 0);
-        _leftHeader.margin_left = 6;
+        _leftHeader.margin_start = 6;
         _leftHeader.margin_top = 6;
         _leftHeader.margin_bottom = 6;
 
@@ -200,10 +200,17 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         _contentBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
         _leftBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
         _rightBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
+        _clbuttonBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
+        _cleanButton = new Gtk.Button();
+        _cleanButton.set_label(_("Clean"));
+        _cleanButton.clicked.connect(onCleanList);
+        _cleanButton.set_size_request(50, 0);
+        _clbuttonBox.pack_start(_cleanButton, true, true);
         _contentSeparator = new Gtk.Separator(Gtk.Orientation.VERTICAL);
         _contentSeparator.get_style_context().add_class("dark-separator");
-        _leftBox.set_size_request(357, 0);
+        _leftBox.set_size_request(350, 0);
 
+        _contentBox.pack_start(_clbuttonBox, false, true);
         _contentBox.pack_start(_leftBox, false, true);
         _contentBox.pack_start(_contentSeparator, false, false);
         _contentBox.pack_start(_rightBox, true, true);
@@ -214,10 +221,10 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         var topOverlay = new Gtk.Overlay();
 
         topText = new Gtk.TextView();
-        topText.set_margin_left(7);
+        topText.set_margin_start(7);
         topText.set_margin_top(7);
-        topText.set_margin_right(7);
-        topText.override_font(fd);
+        topText.set_margin_end(7);
+        //topText.override_font(fd);
         topText.set_wrap_mode(Gtk.WrapMode.WORD_CHAR);
         topText.buffer.changed.connect(onTextChange);
         var topScroll = new Gtk.ScrolledWindow (null, null);
@@ -226,28 +233,28 @@ public class TranslateWindow : Gtk.ApplicationWindow {
 
         _toast = new Granite.Widgets.Toast("");
         topOverlay.add(topScroll);
-        topOverlay.add_overlay(_toast);  
+        topOverlay.add_overlay(_toast);
 
         /// Translate destination
-        var bottomOverlay = new Gtk.Overlay();        
+        var bottomOverlay = new Gtk.Overlay();
 
         bottomText = new Gtk.TextView();
         bottomText.set_editable(false);
         bottomText.set_margin_top(7);
-        bottomText.set_margin_right(7);
-        bottomText.set_margin_left(7);
-        bottomText.override_font(fd);
+        bottomText.set_margin_end(7);
+        bottomText.set_margin_start(7);
+        //bottomText.override_font(fd);
         bottomText.set_cursor_visible(false);
         bottomText.set_wrap_mode(Gtk.WrapMode.WORD_CHAR);
-        
+
         var bottomScroll = new Gtk.ScrolledWindow (null, null);
         bottomScroll.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
-        bottomScroll.add (bottomText);                
-        
+        bottomScroll.add (bottomText);
+
         _progressSpinner = new Gtk.Spinner ();
         _progressSpinner.active = false;
         _progressSpinner.margin = 70;
-                
+
 
         bottomOverlay.add(bottomScroll);
         bottomOverlay.add_overlay(_progressSpinner);
@@ -257,7 +264,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         topLabelLang = new Gtk.Label("");
         topLabelLang.set_margin_bottom(3);
 
-        topLabelLen = new Gtk.Label("");        
+        topLabelLen = new Gtk.Label("");
         topLabelLen.set_markup(@"<span size=\"small\">0/$MAX_CHARS</span>");
         topLabelLen.set_margin_bottom(3);
 
@@ -285,12 +292,12 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         _dictText = new Gtk.TextView();
         _dictText.set_editable(false);
         _dictText.set_margin_top(7);
-        _dictText.set_margin_right(7);
-        _dictText.set_margin_left(7);
+        _dictText.set_margin_end(7);
+        _dictText.set_margin_start(7);
         _dictText.set_wrap_mode(Gtk.WrapMode.WORD);
         _dictText.set_cursor_visible(false);
         var dictScroll = new Gtk.ScrolledWindow (null, null);
-        dictScroll.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);        
+        dictScroll.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
         dictScroll.add (_dictText);
 
         _dictLangLabel = new Gtk.Label("");
@@ -311,7 +318,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         populateLangs();
         refreshLangLabels();
 
-        hideDictionary();        
+        hideDictionary();
 
         styleWindow();
 
@@ -347,7 +354,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
     }
 
     // Populate combo with languages
-    private void populateLangs() {        
+    private void populateLangs() {
         rightLangCombo.setLanguages (langs);
         rightLangCombo.setActive (global.getDestStartLang());
         rightLangCombo.changed.connect(onRightComboChange);
@@ -366,6 +373,12 @@ public class TranslateWindow : Gtk.ApplicationWindow {
       _dictText.buffer.text = "";
     }
 
+    // Clear translate text
+    private void onCleanList() {
+      topText.buffer.text = "";
+    }
+
+
     private void refreshLangLabels() {
         var llang = getLeftLang().name;
         var rlang = getRightLang().name;
@@ -375,9 +388,9 @@ public class TranslateWindow : Gtk.ApplicationWindow {
     }
 
     // Get language id from left combobox
-    private LangInfo getLeftLang() {        
+    private LangInfo getLeftLang() {
         return leftLangCombo.getActive ();
-    }    
+    }
 
     // Get right language name
     private LangInfo getRightLang() {
@@ -391,7 +404,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
 
         var needUpdate = true;
 
-        if (leftLa == rightLa) {            
+        if (leftLa == rightLa) {
             needUpdate = false;
             if (isRight) {
                 leftLang = rightLang;
@@ -423,14 +436,14 @@ public class TranslateWindow : Gtk.ApplicationWindow {
 
     /// On change value in right combobox
     private void onRightComboChange(LangInfo info) {
-        
+
         onLangChange(true);
     }
 
     // Swap languages
-    private void onSwap() {        
+    private void onSwap() {
         var lang = getLeftLang();
-        rightLangCombo.setActive (lang.id);        
+        rightLangCombo.setActive (lang.id);
     }
 
     /// Start translate service
@@ -468,9 +481,9 @@ public class TranslateWindow : Gtk.ApplicationWindow {
             Source.remove(_timeoutId);
             _timeoutId = null;
         }
-        
+
         // Start new timer
-        _timeoutId = Timeout.add(TIMEOUT_BEFOR_TRANSLATE, startTranslate);                
+        _timeoutId = Timeout.add(TIMEOUT_BEFOR_TRANSLATE, startTranslate);
     }
 
     /// On translate complete
