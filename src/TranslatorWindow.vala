@@ -28,6 +28,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
     private Gtk.Entry _wordInput;
     private Gtk.Button _searchWordButton;
     private Gtk.Button _cleanButton;
+    private Gtk.Image _image;
 
     private Gtk.Box _contentBox;
     private Gtk.Box _leftBox;
@@ -202,7 +203,10 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         _rightBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
         _clbuttonBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
         _cleanButton = new Gtk.Button();
-        _cleanButton.set_label(_("Clean"));
+        //_cleanButton.set_label(_("Clean"));
+        _image = new Gtk.Image.from_icon_name("edit-clear-symbolic", Gtk.IconSize.BUTTON);
+        _cleanButton.set_image(_image);
+        _cleanButton.set_image_position(Gtk.PositionType.BOTTOM);
         _cleanButton.clicked.connect(onCleanList);
         _cleanButton.set_size_request(50, 0);
         _clbuttonBox.pack_start(_cleanButton, true, true);
@@ -376,6 +380,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
     // Clear translate text
     private void onCleanList() {
       topText.buffer.text = "";
+      bottomText.buffer.text = "";
     }
 
 

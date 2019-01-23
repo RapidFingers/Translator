@@ -171,13 +171,12 @@ msgstr "Параметры"
 msgid "Search"
 msgstr "Поиск"
 
-#: src/TranslatorWindow.vala:207
-msgid "Clean"
-msgstr "Очистить"
-
 #: src/WebJsonClient.vala:26
 msgid "No connection to server"
 msgstr "Отсутствует подключение к серверу"
+
+#~ msgid "Clean"
+#~ msgstr "Очистить"
 
 #~ msgid "Deutsch"
 #~ msgstr "Немецкий"

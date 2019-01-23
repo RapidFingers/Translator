@@ -177,10 +177,6 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: src/TranslatorWindow.vala:207
-msgid "Clean"
-msgstr ""
-
 #: src/WebJsonClient.vala:26
 msgid "No connection to server"
 msgstr ""
