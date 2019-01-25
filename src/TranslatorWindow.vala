@@ -139,7 +139,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         // Create language combo
         languageCombo ();
 
-        changeButton = new Gtk.Button.from_icon_name("media-playlist-repeat-symbolic");
+        changeButton = new Gtk.Button.from_icon_name("network-transmit-receive-symbolic");
         changeButton.set_tooltip_text(_("Switch language"));
         changeButton.clicked.connect(onSwap);
 
@@ -165,7 +165,8 @@ public class TranslateWindow : Gtk.ApplicationWindow {
 
         // Right dictionary header
         _rightHeader = new Gtk.HeaderBar ();
-        _rightHeader.set_show_close_button (false);
+        _rightHeader.set_show_close_button (true);
+        _rightHeader.set_decoration_layout("::");
         _rightHeader.set_custom_title(new Gtk.Label(""));
         _wordInput = new Gtk.Entry();
         _wordInput.set_size_request(200,20);
@@ -203,7 +204,6 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         _rightBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
         _clbuttonBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
         _cleanButton = new Gtk.Button();
-        //_cleanButton.set_label(_("Clean"));
         _image = new Gtk.Image.from_icon_name("edit-clear-symbolic", Gtk.IconSize.BUTTON);
         _cleanButton.set_image(_image);
         _cleanButton.set_image_position(Gtk.PositionType.BOTTOM);
@@ -346,6 +346,8 @@ public class TranslateWindow : Gtk.ApplicationWindow {
       _rightBox.show_all();
       _contentSeparator.no_show_all = false;
       _contentSeparator.show_all();
+      _leftHeader.set_decoration_layout("close:");
+      _rightHeader.set_decoration_layout(":minimize");
     }
 
     private void hideDictionary() {
@@ -355,6 +357,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
       _rightBox.hide();
       _contentSeparator.no_show_all = true;
       _contentSeparator.hide();
+      _leftHeader.set_decoration_layout("close:minimize");
     }
 
     // Populate combo with languages
