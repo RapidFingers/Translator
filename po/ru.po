@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-01-19 17:13+0400\n"
+"POT-Creation-Date: 2019-01-26 03:11+0400\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Andrey Kultyapov <camellan@yandex.ru>\n"
 "Language-Team: \n"
@@ -151,7 +151,7 @@ msgstr "Сербский"
 msgid "Slovak"
 msgstr "Словацкий"
 
-#: src/TranslatorWindow.vala:142
+#: src/TranslatorWindow.vala:143
 msgid "Switch language"
 msgstr "Переключение языка"
 
@@ -159,24 +159,24 @@ msgstr "Переключение языка"
 msgid "Dictation"
 msgstr "Диктовка"
 
-#: src/TranslatorWindow.vala:152 src/TranslatorWindow.vala:179
+#: src/TranslatorWindow.vala:151 src/TranslatorWindow.vala:179
 msgid "Dictionary"
 msgstr "Словарь"
-
-#: src/TranslatorWindow.vala:157
-msgid "Settings"
-msgstr "Параметры"
 
 #: src/TranslatorWindow.vala:175
 msgid "Search"
 msgstr "Поиск"
 
+#: src/TranslatorWindow.vala:207
+msgid "Clean"
+msgstr "Очистить"
+
 #: src/WebJsonClient.vala:26
 msgid "No connection to server"
 msgstr "Отсутствует подключение к серверу"
 
-#~ msgid "Clean"
-#~ msgstr "Очистить"
+#~ msgid "Settings"
+#~ msgstr "Параметры"
 
 #~ msgid "Deutsch"
 #~ msgstr "Немецкий"

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Translator\n"
-"POT-Creation-Date: 2019-01-19 17:13+0400\n"
+"POT-Creation-Date: 2019-01-26 03:11+0400\n"
 "PO-Revision-Date: 2019-01-19 17:12+0400\n"
 "Last-Translator: Andrey Kultyapov <camellan@yandex.ru>\n"
 "Language-Team: \n"
@@ -18,165 +18,206 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 #: data/com.github.rapidfingers.translator.desktop:3
+#, fuzzy
 msgid "Translator"
-msgstr ""
+msgstr "Переводчик"
 
 #: data/com.github.rapidfingers.translator.desktop:8
+#, fuzzy
 msgid "Translator App"
-msgstr ""
+msgstr "Переводчик"
 
 #: data/com.github.rapidfingers.translator.desktop:9
+#, fuzzy
 msgid "Language translator"
-msgstr ""
+msgstr "Language translator"
 
 #: data/com.github.rapidfingers.translator.desktop:12
+#, fuzzy
 msgid "com.github.rapidfingers.translator"
-msgstr ""
+msgstr "com.github.rapidfingers.translator"
 
 #: src/DictionaryService.vala:37
+#, fuzzy
 msgid "Noun"
-msgstr ""
+msgstr "Существительное"
 
 #: src/DictionaryService.vala:39
+#, fuzzy
 msgid "Adverb"
-msgstr ""
+msgstr "Наречие"
 
 #: src/DictionaryService.vala:41
+#, fuzzy
 msgid "Verb"
-msgstr ""
+msgstr "Глагол"
 
 #: src/DictionaryService.vala:43
+#, fuzzy
 msgid "Adjective"
-msgstr ""
+msgstr "Прилагательное"
 
 #: src/DictionaryService.vala:45
+#, fuzzy
 msgid "Pronoun"
-msgstr ""
+msgstr "Местоимение"
 
 #: src/DictionaryService.vala:47
+#, fuzzy
 msgid "Conjunction"
-msgstr ""
+msgstr "Союз"
 
 #: src/DictionaryService.vala:49
+#, fuzzy
 msgid "Particle"
-msgstr ""
+msgstr "Частица"
 
 #: src/DictionaryService.vala:51
+#, fuzzy
 msgid "Participle"
-msgstr ""
+msgstr "Причастие"
 
 #: src/DictionaryService.vala:53
+#, fuzzy
 msgid "AdverbialParticiple"
-msgstr ""
+msgstr "Деепричастие"
 
 #: src/GlobalSettings.vala:42
+#, fuzzy
 msgid "English"
-msgstr ""
+msgstr "Английский"
 
 #: src/GlobalSettings.vala:43
+#, fuzzy
 msgid "Russian"
-msgstr ""
+msgstr "Русский"
 
 #: src/GlobalSettings.vala:44
+#, fuzzy
 msgid "Ukrainian"
-msgstr ""
+msgstr "Украинский"
 
 #: src/GlobalSettings.vala:45
+#, fuzzy
 msgid "German"
-msgstr ""
+msgstr "Немецкий"
 
 #: src/GlobalSettings.vala:46
+#, fuzzy
 msgid "Polish"
-msgstr ""
+msgstr "Польский"
 
 #: src/GlobalSettings.vala:47
+#, fuzzy
 msgid "French"
-msgstr ""
+msgstr "Французский"
 
 #: src/GlobalSettings.vala:48
+#, fuzzy
 msgid "Spanish"
-msgstr ""
+msgstr "Испанский"
 
 #: src/GlobalSettings.vala:49
+#, fuzzy
 msgid "Dutch"
-msgstr ""
+msgstr "Голландский"
 
 #: src/GlobalSettings.vala:50
+#, fuzzy
 msgid "Italian"
-msgstr ""
+msgstr "Итальянский"
 
 #: src/GlobalSettings.vala:51
+#, fuzzy
 msgid "Latin"
-msgstr ""
+msgstr "Латинский"
 
 #: src/GlobalSettings.vala:52
+#, fuzzy
 msgid "Greek"
-msgstr ""
+msgstr "Греческий"
 
 #: src/GlobalSettings.vala:53
+#, fuzzy
 msgid "Finnish"
-msgstr ""
+msgstr "Финский"
 
 #: src/GlobalSettings.vala:54
+#, fuzzy
 msgid "Swedish"
-msgstr ""
+msgstr "Шведский"
 
 #: src/GlobalSettings.vala:55
+#, fuzzy
 msgid "Turkish"
-msgstr ""
+msgstr "Турецкий"
 
 #: src/GlobalSettings.vala:56
+#, fuzzy
 msgid "Chinese"
-msgstr ""
+msgstr "Китайский"
 
 #: src/GlobalSettings.vala:57
+#, fuzzy
 msgid "Korean"
-msgstr ""
+msgstr "Корейский"
 
 #: src/GlobalSettings.vala:58
+#, fuzzy
 msgid "Japanese"
-msgstr ""
+msgstr "Японский"
 
 #: src/GlobalSettings.vala:59
+#, fuzzy
 msgid "Portuguese"
-msgstr ""
+msgstr "Португальский"
 
 #: src/GlobalSettings.vala:60
+#, fuzzy
 msgid "Czech"
-msgstr ""
+msgstr "Чешский"
 
 #: src/GlobalSettings.vala:61
+#, fuzzy
 msgid "Estonian"
-msgstr ""
+msgstr "Эстонский"
 
 #: src/GlobalSettings.vala:62
+#, fuzzy
 msgid "Serbian"
-msgstr ""
+msgstr "Сербский"
 
 #: src/GlobalSettings.vala:63
+#, fuzzy
 msgid "Slovak"
-msgstr ""
+msgstr "Словацкий"
 
-#: src/TranslatorWindow.vala:142
+#: src/TranslatorWindow.vala:143
+#, fuzzy
 msgid "Switch language"
-msgstr ""
+msgstr "Переключение языка"
 
 #: src/TranslatorWindow.vala:147
+#, fuzzy
 msgid "Dictation"
-msgstr ""
+msgstr "Диктовка"
 
-#: src/TranslatorWindow.vala:152 src/TranslatorWindow.vala:179
+#: src/TranslatorWindow.vala:151 src/TranslatorWindow.vala:179
+#, fuzzy
 msgid "Dictionary"
-msgstr ""
-
-#: src/TranslatorWindow.vala:157
-msgid "Settings"
-msgstr ""
+msgstr "Словарь"
 
 #: src/TranslatorWindow.vala:175
+#, fuzzy
 msgid "Search"
-msgstr ""
+msgstr "Поиск"
+
+#: src/TranslatorWindow.vala:207
+#, fuzzy
+msgid "Clean"
+msgstr "Очистить"
 
 #: src/WebJsonClient.vala:26
+#, fuzzy
 msgid "No connection to server"
-msgstr ""
+msgstr "Отсутствует подключение к серверу"

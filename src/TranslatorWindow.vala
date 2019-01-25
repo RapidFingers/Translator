@@ -204,6 +204,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         _rightBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
         _clbuttonBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
         _cleanButton = new Gtk.Button();
+        _cleanButton.set_tooltip_text(_("Clean"));
         _image = new Gtk.Image.from_icon_name("edit-clear-symbolic", Gtk.IconSize.BUTTON);
         _cleanButton.set_image(_image);
         _cleanButton.set_image_position(Gtk.PositionType.BOTTOM);
