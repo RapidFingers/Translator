@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://appcenter.elementary.io/com.github.rapidfingers.translator">
+    <img src="https://appcenter.elementary.io/badge.svg" alt="Get it on AppCenter">
+  </a>
+</p>
+
 # Summary
 Native Elementary OS translater app. Uses Yandex API.
 * Simple
@@ -24,10 +30,9 @@ Arch Linux users can find Translator under the name [translator-git](https://aur
 
 # Donate
 
-<iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/embed/donate.xml?account=410013012437926&quickpay=donate&payment-type-choice=on&default-sum=100&targets=For+develop&target-visibility=on&project-name=Translator&project-site=&button-text=01&successURL=" width="439" height="117"></iframe>
 
 ## MIT License
-Copyright 2017 Grabli66
+Copyright 2019 Grabli66
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
