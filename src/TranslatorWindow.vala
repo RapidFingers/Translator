@@ -28,7 +28,9 @@ public class TranslateWindow : Gtk.ApplicationWindow {
     private Gtk.Entry _wordInput;
     private Gtk.Button _searchWordButton;
     private Gtk.Button _cleanButton;
-    private Gtk.Image _image;
+    private Gtk.Button _copyButton;
+    private Gtk.Image _imageClean;
+    private Gtk.Image _imageCopy;
 
     private Gtk.Box _contentBox;
     private Gtk.Box _leftBox;
@@ -48,6 +50,9 @@ public class TranslateWindow : Gtk.ApplicationWindow {
     private Gtk.TextTag _headerTag;
     private Gtk.TextTag _normalTag;
     private Gtk.Label _dictLangLabel;
+
+    /// Clipboard
+    private Gtk.Clipboard _clipboard;
 
     /// Toast for messages
     private Granite.Widgets.Toast _toast;
@@ -202,15 +207,24 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         _contentBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
         _leftBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
         _rightBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
-        _clbuttonBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
+        _clbuttonBox = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
         _cleanButton = new Gtk.Button();
         _cleanButton.set_tooltip_text(_("Clean"));
-        _image = new Gtk.Image.from_icon_name("edit-clear-symbolic", Gtk.IconSize.BUTTON);
-        _cleanButton.set_image(_image);
+        _imageClean = new Gtk.Image.from_icon_name("edit-clear-symbolic", Gtk.IconSize.BUTTON);
+        _cleanButton.set_image(_imageClean);
         _cleanButton.set_image_position(Gtk.PositionType.BOTTOM);
         _cleanButton.clicked.connect(onCleanList);
         _cleanButton.set_size_request(50, 0);
+        _copyButton = new Gtk.Button();
+        _copyButton.set_tooltip_text(_("Copy"));
+        _imageCopy = new Gtk.Image.from_icon_name("edit-copy-symbolic", Gtk.IconSize.BUTTON);
+        _copyButton.set_image(_imageCopy);
+        _copyButton.set_image_position(Gtk.PositionType.BOTTOM);
+        _copyButton.clicked.connect(onCopyText);
+        _copyButton.set_size_request(50, 0);
+
         _clbuttonBox.pack_start(_cleanButton, true, true);
+        _clbuttonBox.pack_start(_copyButton, true, true);
         _contentSeparator = new Gtk.Separator(Gtk.Orientation.VERTICAL);
         _contentSeparator.get_style_context().add_class("dark-separator");
         _leftBox.set_size_request(350, 0);
@@ -222,6 +236,8 @@ public class TranslateWindow : Gtk.ApplicationWindow {
 
         var paned = new Gtk.Paned(Gtk.Orientation.VERTICAL);
         _leftBox.pack_start(paned);
+
+        _clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD);
 
         var topOverlay = new Gtk.Overlay();
 
@@ -385,6 +401,15 @@ public class TranslateWindow : Gtk.ApplicationWindow {
     private void onCleanList() {
       topText.buffer.text = "";
       bottomText.buffer.text = "";
+    }
+
+    // Copy translated text to clipboard
+    private void onCopyText() {
+        if (bottomText.buffer.text != "") {
+            _clipboard.set_text(bottomText.buffer.text, -1);
+            _toast.title = _("Translation copied to clipboard");
+            _toast.send_notification();
+        }
     }
 
 

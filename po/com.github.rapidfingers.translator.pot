@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Translator\n"
-"POT-Creation-Date: 2019-01-26 03:11+0400\n"
+"POT-Creation-Date: 2019-01-26 13:58+0400\n"
 "PO-Revision-Date: 2019-01-19 17:12+0400\n"
 "Last-Translator: Andrey Kultyapov <camellan@yandex.ru>\n"
 "Language-Team: \n"
@@ -192,30 +192,39 @@ msgstr "Сербский"
 msgid "Slovak"
 msgstr "Словацкий"
 
-#: src/TranslatorWindow.vala:143
+#: src/TranslatorWindow.vala:148
 #, fuzzy
 msgid "Switch language"
 msgstr "Переключение языка"
 
-#: src/TranslatorWindow.vala:147
+#: src/TranslatorWindow.vala:152
 #, fuzzy
 msgid "Dictation"
 msgstr "Диктовка"
 
-#: src/TranslatorWindow.vala:151 src/TranslatorWindow.vala:179
+#: src/TranslatorWindow.vala:156 src/TranslatorWindow.vala:184
 #, fuzzy
 msgid "Dictionary"
 msgstr "Словарь"
 
-#: src/TranslatorWindow.vala:175
+#: src/TranslatorWindow.vala:180
 #, fuzzy
 msgid "Search"
 msgstr "Поиск"
 
-#: src/TranslatorWindow.vala:207
+#: src/TranslatorWindow.vala:212
 #, fuzzy
 msgid "Clean"
 msgstr "Очистить"
+
+#: src/TranslatorWindow.vala:219
+#, fuzzy
+msgid "Copy"
+msgstr "Копировать"
+
+#: src/TranslatorWindow.vala:410
+msgid "Translation copied to clipboard"
+msgstr ""
 
 #: src/WebJsonClient.vala:26
 #, fuzzy
