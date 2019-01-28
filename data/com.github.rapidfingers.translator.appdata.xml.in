@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2017 Grabli66 <grabli66@gmail.com> -->
 <component type="desktop">
-  <id>com.github.rapidfingers.translator.desktop</id>
+  <id>com.github.rapidfingers.translator</id>
   <project_license>MIT</project_license>
   <metadata_license>MIT</metadata_license>
   <name>Translator</name>
