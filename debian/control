@@ -2,8 +2,8 @@ Source: com.github.rapidfingers.translator
 Section: misc
 Priority: optional
 Maintainer: Grabli66 <grabi66@gmail.com>
-Build-Depends: cmake (>= 2.8),
-               debhelper (>= 9),
+Build-Depends: meson,
+               debhelper (>= 10.5.1),
                libsoup2.4-dev,
                libgee-0.8-dev,
                libglib2.0-dev (>= 2.29.0),
