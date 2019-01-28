@@ -21,4 +21,4 @@ override_dh_builddeb:
 
 
 override_dh_install:
-dh_install --fail-missing
+	dh_install --fail-missing
