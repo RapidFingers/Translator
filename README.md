@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/RapidFingers/Translator.svg?branch=master)](https://travis-ci.com/RapidFingers/Translator)
+
 <p align="center">
   <a href="https://appcenter.elementary.io/com.github.rapidfingers.translator">
     <img src="https://appcenter.elementary.io/badge.svg" alt="Get it on AppCenter">
