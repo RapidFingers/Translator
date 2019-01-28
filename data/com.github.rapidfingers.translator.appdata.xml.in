@@ -80,5 +80,12 @@
         </ul>
 ​      </description>
 ​    </release>
+    <release version="1.3.2" date="2019-01-28">
+​      <description>
+​         <ul>
+            <li>Fixes for June</li>
+        </ul>
+​      </description>
+​    </release>
 ​ </releases>
 </component>
