@@ -14,16 +14,32 @@ Native Elementary OS translater app. Uses Yandex API.
 
 ![Screenshot](https://raw.githubusercontent.com/rapidfingers/translator/master/data/screenshots/screenshot1.png)
 
-# Install
+## Building from source
 
+First you will need to install elementary SDK
+
+ `sudo apt install elementary-sdk`
+ 
+ ### Dependencies
+
+These dependencies must be present before building
+ - `valac`
+ - `granite`
+ - `gtk+-3.0`
+ - `libsoup2.4`
+ - `libgee-0.8`
+ - `libjson-glib`
+ 
+ ### Building
 ```
-git clone https://github.com/RapidFingers/Translator/
-cd Translator
-mkdir build && cd build
-cmake -DCMAKE_INSTALL_PREFIX=/usr ..
-make
-sudo make install
+meson build --prefix=/usr
+cd build
+ninja
 ```
+
+### Installing
+`sudo ninja install`
+ 
 
 ## Arch Linux
 Arch Linux users can find Translator under the name [translator-git](https://aur.archlinux.org/packages/translator-git/) in the **AUR**:
