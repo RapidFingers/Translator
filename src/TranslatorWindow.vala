@@ -24,6 +24,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
     //private Gtk.ToggleButton settingsButton;
 
     private Gtk.Separator _headerSeparator;
+    private Gtk.Separator _buttonSeparator;
     private Gtk.HeaderBar _rightHeader;
     private Gtk.Entry _wordInput;
     private Gtk.Button _searchWordButton;
@@ -207,29 +208,34 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         _contentBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
         _leftBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
         _rightBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
-        _clbuttonBox = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
+        _clbuttonBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
         _cleanButton = new Gtk.Button();
         _cleanButton.set_tooltip_text(_("Clean"));
         _imageClean = new Gtk.Image.from_icon_name("edit-clear-symbolic", Gtk.IconSize.BUTTON);
         _cleanButton.set_image(_imageClean);
         _cleanButton.set_image_position(Gtk.PositionType.BOTTOM);
         _cleanButton.clicked.connect(onCleanList);
-        _cleanButton.set_size_request(50, 0);
+        _cleanButton.set_size_request(0, 40);
         _copyButton = new Gtk.Button();
         _copyButton.set_tooltip_text(_("Copy"));
         _imageCopy = new Gtk.Image.from_icon_name("edit-copy-symbolic", Gtk.IconSize.BUTTON);
         _copyButton.set_image(_imageCopy);
         _copyButton.set_image_position(Gtk.PositionType.BOTTOM);
         _copyButton.clicked.connect(onCopyText);
-        _copyButton.set_size_request(50, 0);
+        _copyButton.set_size_request(0, 40);
 
-        _clbuttonBox.pack_start(_cleanButton, true, true);
-        _clbuttonBox.pack_start(_copyButton, true, true);
+        _buttonSeparator = new Gtk.Separator(Gtk.Orientation.HORIZONTAL);
+        _buttonSeparator.get_style_context().add_class("dark-separator");
+
+        _clbuttonBox.pack_start(_cleanButton, true, true, 1);
+        _clbuttonBox.pack_start(_copyButton, true, true, 1);
+        _clbuttonBox.set_margin_start(2);
+        _clbuttonBox.set_margin_end(2);
+
         _contentSeparator = new Gtk.Separator(Gtk.Orientation.VERTICAL);
         _contentSeparator.get_style_context().add_class("dark-separator");
-        _leftBox.set_size_request(350, 0);
+        _leftBox.set_size_request(397, 0);
 
-        _contentBox.pack_start(_clbuttonBox, false, true);
         _contentBox.pack_start(_leftBox, false, true);
         _contentBox.pack_start(_contentSeparator, false, false);
         _contentBox.pack_start(_rightBox, true, true);
@@ -245,7 +251,6 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         topText.set_margin_start(7);
         topText.set_margin_top(7);
         topText.set_margin_end(7);
-        //topText.override_font(fd);
         topText.set_wrap_mode(Gtk.WrapMode.WORD_CHAR);
         topText.buffer.changed.connect(onTextChange);
         var topScroll = new Gtk.ScrolledWindow (null, null);
@@ -264,7 +269,6 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         bottomText.set_margin_top(7);
         bottomText.set_margin_end(7);
         bottomText.set_margin_start(7);
-        //bottomText.override_font(fd);
         bottomText.set_cursor_visible(false);
         bottomText.set_wrap_mode(Gtk.WrapMode.WORD_CHAR);
 
@@ -303,6 +307,8 @@ public class TranslateWindow : Gtk.ApplicationWindow {
 
         bottomBox.pack_start(bottomOverlay);
         bottomBox.pack_start(bottomLabelBox, false, true, 0);
+        bottomBox.pack_start(_buttonSeparator, false, false);
+        bottomBox.pack_start(_clbuttonBox, false, true, 3);
 
         paned.pack1(topBox, true, true);
         paned.pack2(bottomBox, true, true);

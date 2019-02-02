@@ -21,7 +21,7 @@ public class GlobalSettings : Object {
 
     /// Possible languages
     private Gee.ArrayList<LangInfo> _langs;
-    
+
     /// Settings of app
     private Settings _settings;
 
@@ -129,9 +129,9 @@ public class GlobalSettings : Object {
         var proxyUri = new Soup.URI(@"http://$host:$port");
         return proxyUri;
     }
-    
+
     /// Return possible lang array
-    public LangInfo[] getLangs() {        
+    public LangInfo[] getLangs() {
         return _langs.to_array();
     }
 
@@ -140,7 +140,7 @@ public class GlobalSettings : Object {
       var lngs = getLangs();
       for (var i=0; i < lngs.length; i++) {
         var l = lngs[i];
-        if (l.id == langId) {          
+        if (l.id == langId) {
           return i;
         }
       }
