@@ -33,7 +33,7 @@ public class DictionaryService : AsyncTaskExecuter {
 
   public static string GetSpeechPart(string s) {
     switch (s) {
-      case "noun":        
+      case "noun":
         return _("Noun");
       case "adverb":
           return _("Adverb");
@@ -78,7 +78,7 @@ public class DictionaryService : AsyncTaskExecuter {
             var trList = new Gee.ArrayList<WordTranslation>();
             foreach (var el2 in trs.get_elements()) {
               var obj2 = el2.get_object();
-              var tr = new WordTranslation();              
+              var tr = new WordTranslation();
               if (obj2.has_member ("text")) tr.Text = obj2.get_string_member("text");
               if (obj2.has_member ("pos")) tr.Category = obj2.get_string_member("pos");
               trList.add(tr);
