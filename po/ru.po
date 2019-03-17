@@ -1,7 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-01-26 13:58+0400\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-17 22:21+0400\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Andrey Kultyapov <camellan@yandex.ru>\n"
 "Language-Team: \n"
@@ -10,58 +11,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.0.6\n"
-
-#: data/com.github.rapidfingers.translator.desktop:3
-msgid "Translator"
-msgstr "Переводчик"
-
-#: data/com.github.rapidfingers.translator.desktop:8
-msgid "Translator App"
-msgstr "Переводчик"
-
-#: data/com.github.rapidfingers.translator.desktop:9
-msgid "Language translator"
-msgstr "Language translator"
-
-#: data/com.github.rapidfingers.translator.desktop:12
-msgid "com.github.rapidfingers.translator"
-msgstr "com.github.rapidfingers.translator"
-
-#: src/DictionaryService.vala:37
-msgid "Noun"
-msgstr "Существительное"
-
-#: src/DictionaryService.vala:39
-msgid "Adverb"
-msgstr "Наречие"
-
-#: src/DictionaryService.vala:41
-msgid "Verb"
-msgstr "Глагол"
-
-#: src/DictionaryService.vala:43
-msgid "Adjective"
-msgstr "Прилагательное"
-
-#: src/DictionaryService.vala:45
-msgid "Pronoun"
-msgstr "Местоимение"
-
-#: src/DictionaryService.vala:47
-msgid "Conjunction"
-msgstr "Союз"
-
-#: src/DictionaryService.vala:49
-msgid "Particle"
-msgstr "Частица"
-
-#: src/DictionaryService.vala:51
-msgid "Participle"
-msgstr "Причастие"
-
-#: src/DictionaryService.vala:53
-msgid "AdverbialParticiple"
-msgstr "Деепричастие"
 
 #: src/GlobalSettings.vala:42
 msgid "English"
@@ -151,37 +100,85 @@ msgstr "Сербский"
 msgid "Slovak"
 msgstr "Словацкий"
 
-#: src/TranslatorWindow.vala:148
+#: src/DictionaryService.vala:37
+msgid "Noun"
+msgstr "Существительное"
+
+#: src/DictionaryService.vala:39
+msgid "Adverb"
+msgstr "Наречие"
+
+#: src/DictionaryService.vala:41
+msgid "Verb"
+msgstr "Глагол"
+
+#: src/DictionaryService.vala:43
+msgid "Adjective"
+msgstr "Прилагательное"
+
+#: src/DictionaryService.vala:45
+msgid "Pronoun"
+msgstr "Местоимение"
+
+#: src/DictionaryService.vala:47
+msgid "Conjunction"
+msgstr "Союз"
+
+#: src/DictionaryService.vala:49
+msgid "Particle"
+msgstr "Частица"
+
+#: src/DictionaryService.vala:51
+msgid "Participle"
+msgstr "Причастие"
+
+#: src/DictionaryService.vala:53
+msgid "AdverbialParticiple"
+msgstr "Деепричастие"
+
+#: src/TranslatorWindow.vala:153
 msgid "Switch language"
 msgstr "Переключение языка"
 
-#: src/TranslatorWindow.vala:152
+#: src/TranslatorWindow.vala:157
 msgid "Dictation"
 msgstr "Диктовка"
 
-#: src/TranslatorWindow.vala:156 src/TranslatorWindow.vala:184
+#: src/TranslatorWindow.vala:161 src/TranslatorWindow.vala:193
 msgid "Dictionary"
 msgstr "Словарь"
 
-#: src/TranslatorWindow.vala:180
+#: src/TranslatorWindow.vala:189
 msgid "Search"
 msgstr "Поиск"
 
-#: src/TranslatorWindow.vala:212
+#: src/TranslatorWindow.vala:224
 msgid "Clean"
 msgstr "Очистить"
 
-#: src/TranslatorWindow.vala:219
+#: src/TranslatorWindow.vala:231
 msgid "Copy"
 msgstr "Копировать"
 
-#: src/TranslatorWindow.vala:410
+#: src/TranslatorWindow.vala:431
 msgid "Translation copied to clipboard"
 msgstr "Перевод скопирован в буфер обмена"
 
 #: src/WebJsonClient.vala:26
 msgid "No connection to server"
 msgstr "Отсутствует подключение к серверу"
+
+#~ msgid "Translator"
+#~ msgstr "Переводчик"
+
+#~ msgid "Translator App"
+#~ msgstr "Переводчик"
+
+#~ msgid "Language translator"
+#~ msgstr "Language translator"
+
+#~ msgid "com.github.rapidfingers.translator"
+#~ msgstr "com.github.rapidfingers.translator"
 
 #~ msgid "Settings"
 #~ msgstr "Параметры"

@@ -108,7 +108,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
             }
 
             #contentbox, #topscroll, #bottomscroll, #topinfobox, #bottominfobox, #dictbox {
-                background-color: #fff;
+                background-color: #4d4d4d;
             }
         ";
         Granite.Widgets.Utils.set_theming_for_screen (this.get_screen (), style, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
@@ -322,7 +322,6 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         bottomBox.pack_start(bottomOverlay);
         bottomBox.pack_start(bottomLabelBox, false, true, 0);
         bottomBox.pack_start(_buttonSeparator, false, false);
-        bottomBox.pack_start(_clbuttonBox, false, true, 3);
 
         paned.pack1(topBox, true, true);
         paned.pack2(bottomBox, true, true);
