@@ -35,6 +35,7 @@ public class Main : Object {
 
     Gtk.init (ref args);
     var app = new TranslateApplication();
-    return app.run (null);
+
+    return app.run (args);
   }
 }

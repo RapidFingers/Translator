@@ -25,9 +25,13 @@ public class WebJsonClient : GLib.Object {
     if (status == NO_CONNECTION) {
       throw new TranslatorError.NoConnection(_("No connection to server"));
     }
-
-    var mess = (string)message.response_body.data;
-    parser.load_from_data (mess);
-    return parser.get_root ().get_object ();
+    try {
+      var mess = (string)message.response_body.data;
+      parser.load_from_data (mess);
+    }
+    catch (GLib.Error error) {
+        warning ("%s", error.message);
+    }
+      return parser.get_root ().get_object ();
   }
 }

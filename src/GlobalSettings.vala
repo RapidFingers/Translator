@@ -120,7 +120,8 @@ public class GlobalSettings : Object {
         var settings = new Settings("org.gnome.system.proxy");
         var mode = settings.get_enum("mode");
         if (mode == PROXY_MODE_NONE) {
-            return null;
+            var proxyUri = new Soup.URI(@"");
+            return proxyUri;
         }
 
         settings = new Settings("org.gnome.system.proxy.http");

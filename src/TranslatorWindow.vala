@@ -206,7 +206,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
 
         // Content
         _contentBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
-        _leftBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
+        _leftBox = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
         _rightBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
         _clbuttonBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
         _cleanButton = new Gtk.Button();
@@ -229,8 +229,6 @@ public class TranslateWindow : Gtk.ApplicationWindow {
 
         _clbuttonBox.pack_start(_cleanButton, true, true, 1);
         _clbuttonBox.pack_start(_copyButton, true, true, 1);
-        _clbuttonBox.set_margin_start(2);
-        _clbuttonBox.set_margin_end(2);
 
         _contentSeparator = new Gtk.Separator(Gtk.Orientation.VERTICAL);
         _contentSeparator.get_style_context().add_class("dark-separator");
@@ -242,6 +240,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
 
         var paned = new Gtk.Paned(Gtk.Orientation.VERTICAL);
         _leftBox.pack_start(paned);
+        _leftBox.pack_start(_clbuttonBox, false, false, 0);
 
         _clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD);
 
@@ -312,6 +311,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
 
         paned.pack1(topBox, true, true);
         paned.pack2(bottomBox, true, true);
+
 
         var dictBox = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
         var dictLabelBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
