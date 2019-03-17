@@ -181,7 +181,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
 
         _rightHeader.valign = Gtk.Align.CENTER;
         _rightHeader.name = "rightheader";
-        
+
         _rightHeader.set_custom_title(new Gtk.Label(""));
         _wordInput = new Gtk.Entry();
         _wordInput.activate.connect(onDictSearch);
@@ -214,12 +214,8 @@ public class TranslateWindow : Gtk.ApplicationWindow {
 
         // Content
         _contentBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
-<<<<<<< HEAD
         _leftBox = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
-=======
         _contentBox.name = "contentbox";
-        _leftBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
->>>>>>> bb2720789b7e1babf81bd6bbd5bd13d3c0ada487
         _rightBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
         _rightBox.name = "dictbox";
 
