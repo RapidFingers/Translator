@@ -106,6 +106,10 @@ public class TranslateWindow : Gtk.ApplicationWindow {
                 box-shadow: 1px 1px 1px #DDD;
                 border-radius: 3px;
             }
+
+            #contentbox, #topscroll, #bottomscroll, #topinfobox, #bottominfobox, #dictbox {
+                background-color: #fff;
+            }
         ";
         Granite.Widgets.Utils.set_theming_for_screen (this.get_screen (), style, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
     }
@@ -171,11 +175,15 @@ public class TranslateWindow : Gtk.ApplicationWindow {
 
         // Right dictionary header
         _rightHeader = new Gtk.HeaderBar ();
+
         _rightHeader.set_show_close_button (true);
         _rightHeader.set_decoration_layout("::");
+
+        _rightHeader.valign = Gtk.Align.CENTER;
+        _rightHeader.name = "rightheader";
+        
         _rightHeader.set_custom_title(new Gtk.Label(""));
         _wordInput = new Gtk.Entry();
-        _wordInput.set_size_request(200,20);
         _wordInput.activate.connect(onDictSearch);
         _searchWordButton = new Gtk.Button.from_icon_name("edit-find-symbolic");
         _searchWordButton.set_tooltip_text(_("Search"));
@@ -206,8 +214,15 @@ public class TranslateWindow : Gtk.ApplicationWindow {
 
         // Content
         _contentBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
+<<<<<<< HEAD
         _leftBox = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
+=======
+        _contentBox.name = "contentbox";
+        _leftBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
+>>>>>>> bb2720789b7e1babf81bd6bbd5bd13d3c0ada487
         _rightBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
+        _rightBox.name = "dictbox";
+
         _clbuttonBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
         _cleanButton = new Gtk.Button();
         _cleanButton.set_tooltip_text(_("Clean"));
@@ -234,7 +249,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         _contentSeparator.get_style_context().add_class("dark-separator");
         _leftBox.set_size_request(397, 0);
 
-        _contentBox.pack_start(_leftBox, false, true);
+        _contentBox.pack_start(_leftBox, true, true);
         _contentBox.pack_start(_contentSeparator, false, false);
         _contentBox.pack_start(_rightBox, true, true);
 
@@ -253,6 +268,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         topText.set_wrap_mode(Gtk.WrapMode.WORD_CHAR);
         topText.buffer.changed.connect(onTextChange);
         var topScroll = new Gtk.ScrolledWindow (null, null);
+        topScroll.name = "topscroll";
         topScroll.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
         topScroll.add (topText);
 
@@ -272,6 +288,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         bottomText.set_wrap_mode(Gtk.WrapMode.WORD_CHAR);
 
         var bottomScroll = new Gtk.ScrolledWindow (null, null);
+        bottomScroll.name = "bottomscroll";
         bottomScroll.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
         bottomScroll.add (bottomText);
 
@@ -284,6 +301,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         bottomOverlay.add_overlay(_progressSpinner);
 
         var topBox = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
+        topBox.name = "topinfobox";
         var topLabelBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
         topLabelLang = new Gtk.Label("");
         topLabelLang.set_margin_bottom(3);
@@ -299,6 +317,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         topBox.pack_start(topLabelBox, false, true, 0);
 
         var bottomBox = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
+        bottomBox.name = "bottominfobox";
         var bottomLabelBox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
         bottomLabelLang = new Gtk.Label("");
         bottomLabelLang.set_margin_bottom(3);

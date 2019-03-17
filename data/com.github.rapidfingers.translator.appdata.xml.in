@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2017 Grabli66 <grabli66@gmail.com> -->
 <component type="desktop">
-  <id>com.github.rapidfingers.translator.desktop</id>
+  <id>com.github.rapidfingers.translator</id>
   <project_license>MIT</project_license>
   <metadata_license>MIT</metadata_license>
   <name>Translator</name>
@@ -77,6 +77,13 @@
             <li>Timeout before translate</li>
             <li>Fix useless translate on language combobox click</li>
             <li>Fixed lack of translation, when text is changed during the transfer</li>
+        </ul>
+​      </description>
+​    </release>
+    <release version="1.3.2" date="2019-01-28">
+​      <description>
+​         <ul>
+            <li>Fixes for June</li>
         </ul>
 ​      </description>
 ​    </release>
