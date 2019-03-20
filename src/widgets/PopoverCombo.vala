@@ -127,7 +127,7 @@ public class PopoverCombo : Gtk.ToggleButton {
 
     // Get active language info
     public LangInfo getActive () {
-        if (activeLang == null) return null;
+        //if (activeLang == null) return null;
         return activeLang.info;
     }
 }

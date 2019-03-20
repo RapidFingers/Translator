@@ -1,22 +1,21 @@
 Source: com.github.rapidfingers.translator
-Section: misc
-Priority: optional
+Section: x11
+Priority: extra
 Maintainer: Grabli66 <grabi66@gmail.com>
-Build-Depends: meson,
-               debhelper (>= 10.5.1),
+Build-Depends: meson ,
+               debhelper (>= 9),
                libsoup2.4-dev,
                libgee-0.8-dev,
                libglib2.0-dev,
                libgranite-dev,
                libgtk-3-dev,
                libjson-glib-dev,
-               valac
+               gettext,
+               valac (>= 0.26)
 Standards-Version: 3.9.3
 
 Package: com.github.rapidfingers.translator
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Conflicts: com.github.rapidfingers.translator
-Pre-Depends: dpkg (>= 1.15.6)
 Description: Simple language translator, written specialy for Elementary OS
  Simple language translator, written specialy for Elementary OS

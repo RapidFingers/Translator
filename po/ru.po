@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-17 22:21+0400\n"
+"POT-Creation-Date: 2019-03-21 02:45+0400\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Andrey Kultyapov <camellan@yandex.ru>\n"
 "Language-Team: \n"
@@ -136,31 +136,31 @@ msgstr "Причастие"
 msgid "AdverbialParticiple"
 msgstr "Деепричастие"
 
-#: src/TranslatorWindow.vala:153
+#: src/TranslatorWindow.vala:128
 msgid "Switch language"
 msgstr "Переключение языка"
 
-#: src/TranslatorWindow.vala:157
+#: src/TranslatorWindow.vala:132
 msgid "Dictation"
 msgstr "Диктовка"
 
-#: src/TranslatorWindow.vala:161 src/TranslatorWindow.vala:193
+#: src/TranslatorWindow.vala:136 src/TranslatorWindow.vala:168
 msgid "Dictionary"
 msgstr "Словарь"
 
-#: src/TranslatorWindow.vala:189
+#: src/TranslatorWindow.vala:164
 msgid "Search"
 msgstr "Поиск"
 
-#: src/TranslatorWindow.vala:224
+#: src/TranslatorWindow.vala:199
 msgid "Clean"
 msgstr "Очистить"
 
-#: src/TranslatorWindow.vala:231
+#: src/TranslatorWindow.vala:207
 msgid "Copy"
 msgstr "Копировать"
 
-#: src/TranslatorWindow.vala:431
+#: src/TranslatorWindow.vala:405
 msgid "Translation copied to clipboard"
 msgstr "Перевод скопирован в буфер обмена"
 
