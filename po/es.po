@@ -1,24 +1,213 @@
 msgid ""
 msgstr ""
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-21 02:45+0400\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+
+#: src/GlobalSettings.vala:42
 msgid "English"
 msgstr "Inglés"
 
+#: src/GlobalSettings.vala:43
 msgid "Russian"
 msgstr "Ruso"
 
+#: src/GlobalSettings.vala:44
 msgid "Ukrainian"
 msgstr "Ucraniano"
 
-msgid "Deutsch"
-msgstr "Alemán"
+#: src/GlobalSettings.vala:45
+#, fuzzy
+msgid "German"
+msgstr "Немецкий"
 
+#: src/GlobalSettings.vala:46
+#, fuzzy
+msgid "Polish"
+msgstr "Inglés"
+
+#: src/GlobalSettings.vala:47
 msgid "French"
 msgstr "Francés"
 
+#: src/GlobalSettings.vala:48
 msgid "Spanish"
 msgstr "Español"
 
+#: src/GlobalSettings.vala:49
 msgid "Dutch"
 msgstr "Holandés"
+
+#: src/GlobalSettings.vala:50
+#, fuzzy
+msgid "Italian"
+msgstr "Итальянский"
+
+#: src/GlobalSettings.vala:51
+#, fuzzy
+msgid "Latin"
+msgstr "Латинский"
+
+#: src/GlobalSettings.vala:52
+#, fuzzy
+msgid "Greek"
+msgstr "Греческий"
+
+#: src/GlobalSettings.vala:53
+#, fuzzy
+msgid "Finnish"
+msgstr "Финский"
+
+#: src/GlobalSettings.vala:54
+#, fuzzy
+msgid "Swedish"
+msgstr "Шведский"
+
+#: src/GlobalSettings.vala:55
+#, fuzzy
+msgid "Turkish"
+msgstr "Турецкий"
+
+#: src/GlobalSettings.vala:56
+#, fuzzy
+msgid "Chinese"
+msgstr "Китайский"
+
+#: src/GlobalSettings.vala:57
+#, fuzzy
+msgid "Korean"
+msgstr "Корейский"
+
+#: src/GlobalSettings.vala:58
+#, fuzzy
+msgid "Japanese"
+msgstr "Японский"
+
+#: src/GlobalSettings.vala:59
+#, fuzzy
+msgid "Portuguese"
+msgstr "Португальский"
+
+#: src/GlobalSettings.vala:60
+#, fuzzy
+msgid "Czech"
+msgstr "Чешский"
+
+#: src/GlobalSettings.vala:61
+#, fuzzy
+msgid "Estonian"
+msgstr "Эстонский"
+
+#: src/GlobalSettings.vala:62
+#, fuzzy
+msgid "Serbian"
+msgstr "Сербский"
+
+#: src/GlobalSettings.vala:63
+#, fuzzy
+msgid "Slovak"
+msgstr "Словацкий"
+
+#: src/DictionaryService.vala:37
+#, fuzzy
+msgid "Noun"
+msgstr "Существительное"
+
+#: src/DictionaryService.vala:39
+#, fuzzy
+msgid "Adverb"
+msgstr "Наречие"
+
+#: src/DictionaryService.vala:41
+#, fuzzy
+msgid "Verb"
+msgstr "Глагол"
+
+#: src/DictionaryService.vala:43
+#, fuzzy
+msgid "Adjective"
+msgstr "Прилагательное"
+
+#: src/DictionaryService.vala:45
+#, fuzzy
+msgid "Pronoun"
+msgstr "Местоимение"
+
+#: src/DictionaryService.vala:47
+#, fuzzy
+msgid "Conjunction"
+msgstr "Союз"
+
+#: src/DictionaryService.vala:49
+#, fuzzy
+msgid "Particle"
+msgstr "Частица"
+
+#: src/DictionaryService.vala:51
+#, fuzzy
+msgid "Participle"
+msgstr "Причастие"
+
+#: src/DictionaryService.vala:53
+#, fuzzy
+msgid "AdverbialParticiple"
+msgstr "Деепричастие"
+
+#: src/TranslatorWindow.vala:128
+#, fuzzy
+msgid "Switch language"
+msgstr "Переключение языка"
+
+#: src/TranslatorWindow.vala:132
+#, fuzzy
+msgid "Dictation"
+msgstr "Диктовка"
+
+#: src/TranslatorWindow.vala:136 src/TranslatorWindow.vala:168
+#, fuzzy
+msgid "Dictionary"
+msgstr "Словарь"
+
+#: src/TranslatorWindow.vala:164
+#, fuzzy
+msgid "Search"
+msgstr "Поиск"
+
+#: src/TranslatorWindow.vala:199
+#, fuzzy
+msgid "Clean"
+msgstr "Очистить"
+
+#: src/TranslatorWindow.vala:207
+#, fuzzy
+msgid "Copy"
+msgstr "Копировать"
+
+#: src/TranslatorWindow.vala:405
+msgid "Translation copied to clipboard"
+msgstr ""
+
+#: src/WebJsonClient.vala:26
+#, fuzzy
+msgid "No connection to server"
+msgstr "Отсутствует подключение к серверу"
+
+#, fuzzy
+#~ msgid "Translator"
+#~ msgstr "Переводчик"
+
+#, fuzzy
+#~ msgid "Translator App"
+#~ msgstr "Переводчик"
+
+#, fuzzy
+#~ msgid "Language translator"
+#~ msgstr "Language translator"
+
+#, fuzzy
+#~ msgid "com.github.rapidfingers.translator"
+#~ msgstr "com.github.rapidfingers.translator"
+
+#~ msgid "Deutsch"
+#~ msgstr "Alemán"

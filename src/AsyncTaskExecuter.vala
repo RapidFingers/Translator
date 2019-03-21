@@ -26,12 +26,9 @@ private class AsyncTask : GLib.Object {
         });
 
         _isActive = false;
-      } 
+      }
       catch(TranslatorError e) {
         _parent.OnError(e);
-      }      
-      catch (Error e) {
-        stderr.printf(e.message);
       }
     }
 
@@ -72,9 +69,14 @@ public class AsyncTaskExecuter : GLib.Object {
 
   /// Constructor
   public AsyncTaskExecuter() {
-    _pool = new ThreadPool<AsyncTask>.with_owned_data ((worker) => {
-      worker.Start ();
-    }, 7, false);
+    try {
+      _pool = new ThreadPool<AsyncTask>.with_owned_data ((worker) => {
+        worker.Start ();
+      }, 7, false);
+    }
+    catch (GLib.ThreadError error) {
+          warning ("%s", error.message);
+      }
   }
 
   /// Run task
@@ -82,7 +84,12 @@ public class AsyncTaskExecuter : GLib.Object {
     if (_task != null) {
         _task.Stop();
     }
-    _task = new AsyncTask(this, ExecuteTimeout);
-    _pool.add(_task);
+      _task = new AsyncTask(this, ExecuteTimeout);
+    try {
+      _pool.add(_task);
+    }
+    catch (GLib.ThreadError error) {
+        warning ("%s", error.message);
+      }
   }
 }
