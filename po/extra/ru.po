@@ -1,0 +1,106 @@
+# Russian translations for extra package.
+# Copyright (C) 2019 THE extra'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the extra package.
+# Automatically generated, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: extra\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-23 12:03+0400\n"
+"PO-Revision-Date: 2019-03-23 12:00+0400\n"
+"Last-Translator: Andrey Kultyapov <camellan@yandex.ru>\n"
+"Language-Team: none\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#: data/com.github.rapidfingers.translator.appdata.xml.in:7
+#: data/com.github.rapidfingers.translator.appdata.xml.in:9
+#: data/com.github.rapidfingers.translator.desktop.in:3
+msgid "Translator"
+msgstr "Translator"
+
+#: data/com.github.rapidfingers.translator.appdata.xml.in:8
+msgid "RapidFingers"
+msgstr "RapidFingers"
+
+#: data/com.github.rapidfingers.translator.appdata.xml.in:11
+msgid "Simple and fast translator"
+msgstr "Простой и быстрый переводчик"
+
+#: data/com.github.rapidfingers.translator.appdata.xml.in:30
+msgid "Serbian language"
+msgstr "Сербский язык"
+
+#: data/com.github.rapidfingers.translator.appdata.xml.in:31
+msgid "Fix desktop file"
+msgstr "Исправлен desktop файл"
+
+#: data/com.github.rapidfingers.translator.appdata.xml.in:38
+msgid "Slovak language"
+msgstr "Словацкий язык"
+
+#: data/com.github.rapidfingers.translator.appdata.xml.in:39
+msgid "Translate progress"
+msgstr "Прогресс перевода"
+
+#: data/com.github.rapidfingers.translator.appdata.xml.in:46
+msgid "Fix for dark theme"
+msgstr "Исправление для тёмной темы"
+
+#: data/com.github.rapidfingers.translator.appdata.xml.in:53
+msgid "Homepage fix"
+msgstr "Исправление домашней страницы"
+
+#: data/com.github.rapidfingers.translator.appdata.xml.in:60
+msgid "System icons"
+msgstr "Системные значки"
+
+#: data/com.github.rapidfingers.translator.appdata.xml.in:61
+msgid "Better dark theme look"
+msgstr "Улучшение тёмной темы"
+
+#: data/com.github.rapidfingers.translator.appdata.xml.in:68
+msgid "Toast message if no connection to server"
+msgstr "Уведомление при отсутствии связи с сервером"
+
+#: data/com.github.rapidfingers.translator.appdata.xml.in:69
+msgid "Fix ugly text selection color"
+msgstr "Исправлен некрасивый цвет выделения текста"
+
+#: data/com.github.rapidfingers.translator.appdata.xml.in:70
+msgid "Minor bugfix"
+msgstr "Незначительные исправления"
+
+#: data/com.github.rapidfingers.translator.appdata.xml.in:77
+msgid "Timeout before translate"
+msgstr "Задержка перед переводом"
+
+#: data/com.github.rapidfingers.translator.appdata.xml.in:78
+msgid "Fix useless translate on language combobox click"
+msgstr ""
+
+#: data/com.github.rapidfingers.translator.appdata.xml.in:79
+msgid "Fixed lack of translation, when text is changed during the transfer"
+msgstr "Исправлено отсутствие перевода, когда текст изменен во время передачи"
+
+#: data/com.github.rapidfingers.translator.appdata.xml.in:86
+msgid "Fixes for June"
+msgstr "Исправления для Juno"
+
+#: data/com.github.rapidfingers.translator.desktop.in:8
+msgid "Translator App"
+msgstr "Переводчик"
+
+#: data/com.github.rapidfingers.translator.desktop.in:9
+msgid "Language translator"
+msgstr "Переводчик"
+
+#: data/com.github.rapidfingers.translator.desktop.in:12
+msgid "com.github.rapidfingers.translator"
+msgstr "com.github.rapidfingers.translator"

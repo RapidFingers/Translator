@@ -4,3 +4,4 @@ i18n.gettext(meson.project_name(),
     '--from-code=UTF-8'
   ]
 )
+subdir('extra')
