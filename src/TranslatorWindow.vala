@@ -81,6 +81,30 @@ public class TranslateWindow : Gtk.ApplicationWindow {
     /// Is translate in progress
     private bool _isTranslating = false;
 
+    // Apply styles
+    private void styleWindow() {
+        var style = @"
+            GtkTextView {
+                background-color: RGBA(255,0,0,0);
+            }
+            GtkTextView:selected {
+                background-color: #3689e6;
+            }
+            .dark-separator {
+                color: #888;
+            }
+            .popovercombo {
+                border: 1px solid #AAA;
+                box-shadow: 1px 1px 1px #DDD;
+                border-radius: 3px;
+            }
+            #contentbox, #topscroll, #bottomscroll, #topinfobox, #bottominfobox, #dictbox {
+                background-color: #fff;
+            }
+        ";
+        Granite.Widgets.Utils.set_theming_for_screen (this.get_screen (), style, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+    }
+
     // Create language combos
     private void languageCombo () {
         leftLangCombo = new PopoverCombo ();
@@ -124,7 +148,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         // Create language combo
         languageCombo ();
 
-        changeButton = new Gtk.Button.from_icon_name("network-transmit-receive-symbolic");
+        changeButton = new Gtk.Button.from_icon_name("media-playlist-repeat-symbolic");
         changeButton.set_tooltip_text(_("Switch language"));
         changeButton.clicked.connect(onSwap);
 
@@ -134,19 +158,13 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         dictButton = new Gtk.ToggleButton();
         dictButton.set_image(new Gtk.Image.from_icon_name("accessories-dictionary-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
         dictButton.set_tooltip_text(_("Dictionary"));
-        dictButton.toggled.connect(onDictToggle);
-
-        //settingsButton = new Gtk.ToggleButton();
-        //settingsButton.set_image (new Gtk.Image.from_icon_name("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
-        //settingsButton.set_tooltip_text(_("Settings"));
+        dictButton.toggled.connect(onDictToggle);        
 
         _leftHeader.pack_start(leftLangCombo);
         _leftHeader.pack_start(changeButton);
         _leftHeader.pack_start(rightLangCombo);
-        _leftHeader.set_custom_title(new Gtk.Label(""));
-        //_leftHeader.pack_start(voiceButton);
+        _leftHeader.set_custom_title(new Gtk.Label(""));        
         _leftHeader.pack_start(dictButton);
-        //_leftHeader.pack_start(settingsButton);
 
         // Right dictionary header
         _rightHeader = new Gtk.HeaderBar ();
@@ -337,6 +355,8 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         refreshLangLabels();
 
         hideDictionary();
+
+        styleWindow();
 
         this.destroy.connect(onWindowDestroy);
     }

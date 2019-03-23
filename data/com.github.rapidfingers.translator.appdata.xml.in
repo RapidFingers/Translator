@@ -87,5 +87,15 @@
         </ul>
 ​      </description>
 ​    </release>
+    <release version="1.4.0" date="2019-03-23">
+​      <description>
+​         <ul>
+            <li>Clear button (thanks to camellan)</li>
+            <li>Copy button (thanks to camellan)</li>
+            <li>More languages and translations (thanks to camellan)</li>
+            <li>Bug fixes (thanks to camellan)</li>
+        </ul>
+​      </description>
+​    </release>
 ​ </releases>
 </component>
