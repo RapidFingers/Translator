@@ -32,6 +32,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
     private Gtk.Button _copyButton;
     private Gtk.Image _imageClean;
     private Gtk.Image _imageCopy;
+    private Granite.ModeSwitch mode_switch;
 
     private Gtk.Box _contentBox;
     private Gtk.Box _leftBox;
@@ -140,12 +141,21 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         //settingsButton.set_image (new Gtk.Image.from_icon_name("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
         //settingsButton.set_tooltip_text(_("Settings"));
 
+        var gtk_settings = Gtk.Settings.get_default ();
+
+        mode_switch = new Granite.ModeSwitch.from_icon_name ("display-brightness-symbolic", "weather-clear-night-symbolic");
+        mode_switch.primary_icon_tooltip_text = ("Light background");
+        mode_switch.secondary_icon_tooltip_text = ("Dark background");
+        mode_switch.valign = Gtk.Align.CENTER;
+        mode_switch.bind_property ("active", gtk_settings, "gtk_application_prefer_dark_theme");
+
         _leftHeader.pack_start(leftLangCombo);
         _leftHeader.pack_start(changeButton);
         _leftHeader.pack_start(rightLangCombo);
         _leftHeader.set_custom_title(new Gtk.Label(""));
         //_leftHeader.pack_start(voiceButton);
         _leftHeader.pack_start(dictButton);
+        _leftHeader.pack_end (mode_switch);
         //_leftHeader.pack_start(settingsButton);
 
         // Right dictionary header
@@ -220,7 +230,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
 
         _contentSeparator = new Gtk.Separator(Gtk.Orientation.VERTICAL);
         _contentSeparator.get_style_context().add_class("dark-separator");
-        _leftBox.set_size_request(397, 0);
+        _leftBox.set_size_request(490, 0);
 
         _contentBox.pack_start(_leftBox, false, false);
         _contentBox.pack_start(_contentSeparator, false, false);
@@ -410,7 +420,9 @@ public class TranslateWindow : Gtk.ApplicationWindow {
 
     private void refreshLangLabels() {
         var llang = getLeftLang().name;
+        llang = _(llang);
         var rlang = getRightLang().name;
+        rlang = _(rlang);
         topLabelLang.set_markup(@"<span size=\"small\">$llang</span>");
         bottomLabelLang.set_markup(@"<span size=\"small\">$rlang</span>");
         _dictLangLabel.set_markup(@"<span size=\"small\">$llang - $rlang</span>");
