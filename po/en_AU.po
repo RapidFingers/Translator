@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.rapidfingers.translator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-24 19:28+0100\n"
+"POT-Creation-Date: 2019-03-24 19:29+0100\n"
 "PO-Revision-Date: 2019-03-24 18:58+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -152,6 +152,14 @@ msgstr "Dictation"
 #: src/TranslatorWindow.vala:137 src/TranslatorWindow.vala:178
 msgid "Dictionary"
 msgstr "Dictionary"
+
+#: src/TranslatorWindow.vala:147
+msgid "Light background"
+msgstr ""
+
+#: src/TranslatorWindow.vala:148
+msgid "Dark background"
+msgstr ""
 
 #: src/TranslatorWindow.vala:174
 msgid "Search"
