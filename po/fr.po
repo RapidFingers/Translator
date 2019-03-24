@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.rapidfingers.translator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-24 19:29+0100\n"
+"POT-Creation-Date: 2019-03-24 20:46+0100\n"
 "PO-Revision-Date: 2019-03-24 18:14+0100\n"
 "Last-Translator: NathanBnm\n"
 "Language-Team: Français\n"
@@ -139,7 +139,27 @@ msgstr "Participe"
 
 #: src/DictionaryService.vala:53
 msgid "AdverbialParticiple"
-msgstr "Participe Adverbial"
+msgstr "Participe adverbial"
+
+#: src/DictionaryService.vala:55
+msgid "Preposition"
+msgstr "Préposition"
+
+#: src/DictionaryService.vala:57
+msgid "Interjection"
+msgstr "Interjection"
+
+#: src/DictionaryService.vala:59
+msgid "Determiner"
+msgstr "Déterminant"
+
+#: src/DictionaryService.vala:61
+msgid "Determiner / Pronoun"
+msgstr "Déterminant / Pronom"
+
+#: src/DictionaryService.vala:63
+msgid "Numeral"
+msgstr "Chiffre"
 
 #: src/TranslatorWindow.vala:129
 msgid "Switch language"

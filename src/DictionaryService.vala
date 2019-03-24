@@ -51,6 +51,16 @@ public class DictionaryService : AsyncTaskExecuter {
         return _("Participle");
       case "adverbial participle":
         return _("AdverbialParticiple");
+      case "preposition":
+        return _("Preposition");
+      case "interjection":
+        return _("Interjection");
+      case "determiner":
+        return _("Determiner");
+      case "determiner / pronoun":
+        return _("Determiner / Pronoun");
+      case "numeral":
+        return _("Numeral");
     }
 
     return s;
