@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.rapidfingers.translator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-24 18:58+0100\n"
+"POT-Creation-Date: 2019-03-24 19:21+0100\n"
 "PO-Revision-Date: 2019-03-24 18:14+0100\n"
 "Last-Translator: NathanBnm\n"
 "Language-Team: Français\n"
@@ -141,31 +141,31 @@ msgstr "Participe"
 msgid "AdverbialParticiple"
 msgstr "Participe Adverbial"
 
-#: src/TranslatorWindow.vala:152
+#: src/TranslatorWindow.vala:129
 msgid "Switch language"
 msgstr "Changer la langue"
 
-#: src/TranslatorWindow.vala:156
+#: src/TranslatorWindow.vala:133
 msgid "Dictation"
 msgstr "Dicter"
 
-#: src/TranslatorWindow.vala:160 src/TranslatorWindow.vala:186
+#: src/TranslatorWindow.vala:137 src/TranslatorWindow.vala:178
 msgid "Dictionary"
 msgstr "Dictionnaire"
 
-#: src/TranslatorWindow.vala:182
+#: src/TranslatorWindow.vala:174
 msgid "Search"
 msgstr "Rechercher"
 
-#: src/TranslatorWindow.vala:217
+#: src/TranslatorWindow.vala:209
 msgid "Clean"
 msgstr "Effacer"
 
-#: src/TranslatorWindow.vala:225
+#: src/TranslatorWindow.vala:217
 msgid "Copy"
 msgstr "Copier"
 
-#: src/TranslatorWindow.vala:425
+#: src/TranslatorWindow.vala:415
 msgid "Translation copied to clipboard"
 msgstr "Traduction copiée dans le presse-papiers"
 

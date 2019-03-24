@@ -32,6 +32,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
     private Gtk.Button _copyButton;
     private Gtk.Image _imageClean;
     private Gtk.Image _imageCopy;
+    private Granite.ModeSwitch mode_switch;
 
     private Gtk.Box _contentBox;
     private Gtk.Box _leftBox;
@@ -81,30 +82,6 @@ public class TranslateWindow : Gtk.ApplicationWindow {
     /// Is translate in progress
     private bool _isTranslating = false;
 
-    // Apply styles
-    private void styleWindow() {
-        var style = @"
-            GtkTextView {
-                background-color: RGBA(255,0,0,0);
-            }
-            GtkTextView:selected {
-                background-color: #3689e6;
-            }
-            .dark-separator {
-                color: #888;
-            }
-            .popovercombo {
-                border: 1px solid #AAA;
-                box-shadow: 1px 1px 1px #DDD;
-                border-radius: 3px;
-            }
-            #contentbox, #topscroll, #bottomscroll, #topinfobox, #bottominfobox, #dictbox {
-                background-color: #fff;
-            }
-        ";
-        Granite.Widgets.Utils.set_theming_for_screen (this.get_screen (), style, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-    }
-
     // Create language combos
     private void languageCombo () {
         leftLangCombo = new PopoverCombo ();
@@ -148,7 +125,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         // Create language combo
         languageCombo ();
 
-        changeButton = new Gtk.Button.from_icon_name("media-playlist-repeat-symbolic");
+        changeButton = new Gtk.Button.from_icon_name("network-transmit-receive-symbolic");
         changeButton.set_tooltip_text(_("Switch language"));
         changeButton.clicked.connect(onSwap);
 
@@ -158,13 +135,28 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         dictButton = new Gtk.ToggleButton();
         dictButton.set_image(new Gtk.Image.from_icon_name("accessories-dictionary-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
         dictButton.set_tooltip_text(_("Dictionary"));
-        dictButton.toggled.connect(onDictToggle);        
+        dictButton.toggled.connect(onDictToggle);
+
+        //settingsButton = new Gtk.ToggleButton();
+        //settingsButton.set_image (new Gtk.Image.from_icon_name("open-menu-symbolic", Gtk.IconSize.SMALL_TOOLBAR));
+        //settingsButton.set_tooltip_text(_("Settings"));
+
+        var gtk_settings = Gtk.Settings.get_default ();
+
+        mode_switch = new Granite.ModeSwitch.from_icon_name ("display-brightness-symbolic", "weather-clear-night-symbolic");
+        mode_switch.primary_icon_tooltip_text = ("Light background");
+        mode_switch.secondary_icon_tooltip_text = ("Dark background");
+        mode_switch.valign = Gtk.Align.CENTER;
+        mode_switch.bind_property ("active", gtk_settings, "gtk_application_prefer_dark_theme");
 
         _leftHeader.pack_start(leftLangCombo);
         _leftHeader.pack_start(changeButton);
         _leftHeader.pack_start(rightLangCombo);
-        _leftHeader.set_custom_title(new Gtk.Label(""));        
+        _leftHeader.set_custom_title(new Gtk.Label(""));
+        //_leftHeader.pack_start(voiceButton);
         _leftHeader.pack_start(dictButton);
+        _leftHeader.pack_end (mode_switch);
+        //_leftHeader.pack_start(settingsButton);
 
         // Right dictionary header
         _rightHeader = new Gtk.HeaderBar ();
@@ -238,7 +230,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
 
         _contentSeparator = new Gtk.Separator(Gtk.Orientation.VERTICAL);
         _contentSeparator.get_style_context().add_class("dark-separator");
-        _leftBox.set_size_request(397, 0);
+        _leftBox.set_size_request(490, 0);
 
         _contentBox.pack_start(_leftBox, false, false);
         _contentBox.pack_start(_contentSeparator, false, false);
@@ -356,8 +348,6 @@ public class TranslateWindow : Gtk.ApplicationWindow {
 
         hideDictionary();
 
-        styleWindow();
-
         this.destroy.connect(onWindowDestroy);
     }
 
@@ -430,7 +420,9 @@ public class TranslateWindow : Gtk.ApplicationWindow {
 
     private void refreshLangLabels() {
         var llang = getLeftLang().name;
+        llang = _(llang);
         var rlang = getRightLang().name;
+        rlang = _(rlang);
         topLabelLang.set_markup(@"<span size=\"small\">$llang</span>");
         bottomLabelLang.set_markup(@"<span size=\"small\">$rlang</span>");
         _dictLangLabel.set_markup(@"<span size=\"small\">$llang - $rlang</span>");
