@@ -1,11 +1,4 @@
-src/AsyncTaskExecuter.vala
 src/GlobalSettings.vala
-src/Main.vala
-src/TranslatorService.vala
 src/DictionaryService.vala
-src/LangInfo.vala
-src/TranslatorApplication.vala
 src/TranslatorWindow.vala
 src/WebJsonClient.vala
-src/utils/TranslatorError.vala
-src/widgets/PopoverCombo.vala
