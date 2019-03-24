@@ -14,7 +14,7 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: data/com.github.rapidfingers.translator.appdata.xml.in:7
@@ -88,7 +88,7 @@ msgid "Fixed lack of translation, when text is changed during the transfer"
 msgstr ""
 
 #: data/com.github.rapidfingers.translator.appdata.xml.in:86
-msgid "Fixes for June"
+msgid "Fixes for Juno"
 msgstr ""
 
 #: data/com.github.rapidfingers.translator.appdata.xml.in:93

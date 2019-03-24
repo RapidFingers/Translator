@@ -1,7 +1,7 @@
 # French translations for com.github.rapidfingers.translator package.
 # Copyright (C) 2019 THE com.github.rapidfingers.translator'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.rapidfingers.translator package.
-# Automatically generated, 2019.
+# NathanBnm, 2019.
 #
 msgid ""
 msgstr ""
@@ -9,8 +9,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-03-24 18:17+0100\n"
 "PO-Revision-Date: 2019-03-24 18:14+0100\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"Last-Translator: NathanBnm\n"
+"Language-Team: Français\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,156 +19,156 @@ msgstr ""
 
 #: src/GlobalSettings.vala:42
 msgid "English"
-msgstr ""
+msgstr "Anglais"
 
 #: src/GlobalSettings.vala:43
 msgid "Russian"
-msgstr ""
+msgstr "Russe"
 
 #: src/GlobalSettings.vala:44
 msgid "Ukrainian"
-msgstr ""
+msgstr "Ukrénien"
 
 #: src/GlobalSettings.vala:45
 msgid "German"
-msgstr ""
+msgstr "Allemand"
 
 #: src/GlobalSettings.vala:46
 msgid "Polish"
-msgstr ""
+msgstr "Polonais"
 
 #: src/GlobalSettings.vala:47
 msgid "French"
-msgstr ""
+msgstr "Français"
 
 #: src/GlobalSettings.vala:48
 msgid "Spanish"
-msgstr ""
+msgstr "Espagnol"
 
 #: src/GlobalSettings.vala:49
 msgid "Dutch"
-msgstr ""
+msgstr "Néerlandais"
 
 #: src/GlobalSettings.vala:50
 msgid "Italian"
-msgstr ""
+msgstr "Italien"
 
 #: src/GlobalSettings.vala:51
 msgid "Latin"
-msgstr ""
+msgstr "Latin"
 
 #: src/GlobalSettings.vala:52
 msgid "Greek"
-msgstr ""
+msgstr "Grec"
 
 #: src/GlobalSettings.vala:53
 msgid "Finnish"
-msgstr ""
+msgstr "Finnois"
 
 #: src/GlobalSettings.vala:54
 msgid "Swedish"
-msgstr ""
+msgstr "Suédois"
 
 #: src/GlobalSettings.vala:55
 msgid "Turkish"
-msgstr ""
+msgstr "Turc"
 
 #: src/GlobalSettings.vala:56
 msgid "Chinese"
-msgstr ""
+msgstr "Chinois"
 
 #: src/GlobalSettings.vala:57
 msgid "Korean"
-msgstr ""
+msgstr "Coréen"
 
 #: src/GlobalSettings.vala:58
 msgid "Japanese"
-msgstr ""
+msgstr "Japonais"
 
 #: src/GlobalSettings.vala:59
 msgid "Portuguese"
-msgstr ""
+msgstr "Portugais"
 
 #: src/GlobalSettings.vala:60
 msgid "Czech"
-msgstr ""
+msgstr "Tchèque"
 
 #: src/GlobalSettings.vala:61
 msgid "Estonian"
-msgstr ""
+msgstr "Estonien"
 
 #: src/GlobalSettings.vala:62
 msgid "Serbian"
-msgstr ""
+msgstr "Serbe"
 
 #: src/GlobalSettings.vala:63
 msgid "Slovak"
-msgstr ""
+msgstr "Slovaque"
 
 #: src/DictionaryService.vala:37
 msgid "Noun"
-msgstr ""
+msgstr "Nom"
 
 #: src/DictionaryService.vala:39
 msgid "Adverb"
-msgstr ""
+msgstr "Adverbe"
 
 #: src/DictionaryService.vala:41
 msgid "Verb"
-msgstr ""
+msgstr "Verbe"
 
 #: src/DictionaryService.vala:43
 msgid "Adjective"
-msgstr ""
+msgstr "Adjectif"
 
 #: src/DictionaryService.vala:45
 msgid "Pronoun"
-msgstr ""
+msgstr "Pronom"
 
 #: src/DictionaryService.vala:47
 msgid "Conjunction"
-msgstr ""
+msgstr "Conjonction"
 
 #: src/DictionaryService.vala:49
 msgid "Particle"
-msgstr ""
+msgstr "Particule"
 
 #: src/DictionaryService.vala:51
 msgid "Participle"
-msgstr ""
+msgstr "Participe"
 
 #: src/DictionaryService.vala:53
 msgid "AdverbialParticiple"
-msgstr ""
+msgstr "Participe Adverbial"
 
 #: src/TranslatorWindow.vala:152
 msgid "Switch language"
-msgstr ""
+msgstr "Changer la langue"
 
 #: src/TranslatorWindow.vala:156
 msgid "Dictation"
-msgstr ""
+msgstr "Dicter"
 
 #: src/TranslatorWindow.vala:160 src/TranslatorWindow.vala:186
 msgid "Dictionary"
-msgstr ""
+msgstr "Dictionnaire"
 
 #: src/TranslatorWindow.vala:182
 msgid "Search"
-msgstr ""
+msgstr "Rechercher"
 
 #: src/TranslatorWindow.vala:217
 msgid "Clean"
-msgstr ""
+msgstr "Effacer"
 
 #: src/TranslatorWindow.vala:225
 msgid "Copy"
-msgstr ""
+msgstr "Copier"
 
 #: src/TranslatorWindow.vala:425
 msgid "Translation copied to clipboard"
-msgstr ""
+msgstr "Traduction copiée dans le presse-papiers"
 
 #: src/WebJsonClient.vala:26
 msgid "No connection to server"
-msgstr ""
+msgstr "Aucune connexion au serveur"
