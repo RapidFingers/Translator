@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.rapidfingers.translator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-24 19:21+0100\n"
+"POT-Creation-Date: 2019-03-24 19:28+0100\n"
 "PO-Revision-Date: 2019-03-24 18:58+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -20,156 +20,156 @@ msgstr ""
 
 #: src/GlobalSettings.vala:42
 msgid "English"
-msgstr ""
+msgstr "Английский"
 
 #: src/GlobalSettings.vala:43
 msgid "Russian"
-msgstr ""
+msgstr "Русский"
 
 #: src/GlobalSettings.vala:44
 msgid "Ukrainian"
-msgstr ""
+msgstr "Украинский"
 
 #: src/GlobalSettings.vala:45
 msgid "German"
-msgstr ""
+msgstr "Немецкий"
 
 #: src/GlobalSettings.vala:46
 msgid "Polish"
-msgstr ""
+msgstr "Польский"
 
 #: src/GlobalSettings.vala:47
 msgid "French"
-msgstr ""
+msgstr "Французский"
 
 #: src/GlobalSettings.vala:48
 msgid "Spanish"
-msgstr ""
+msgstr "Испанский"
 
 #: src/GlobalSettings.vala:49
 msgid "Dutch"
-msgstr ""
+msgstr "Голландский"
 
 #: src/GlobalSettings.vala:50
 msgid "Italian"
-msgstr ""
+msgstr "Итальянский"
 
 #: src/GlobalSettings.vala:51
 msgid "Latin"
-msgstr ""
+msgstr "Латинский"
 
 #: src/GlobalSettings.vala:52
 msgid "Greek"
-msgstr ""
+msgstr "Греческий"
 
 #: src/GlobalSettings.vala:53
 msgid "Finnish"
-msgstr ""
+msgstr "Финский"
 
 #: src/GlobalSettings.vala:54
 msgid "Swedish"
-msgstr ""
+msgstr "Шведский"
 
 #: src/GlobalSettings.vala:55
 msgid "Turkish"
-msgstr ""
+msgstr "Турецкий"
 
 #: src/GlobalSettings.vala:56
 msgid "Chinese"
-msgstr ""
+msgstr "Китайский"
 
 #: src/GlobalSettings.vala:57
 msgid "Korean"
-msgstr ""
+msgstr "Корейский"
 
 #: src/GlobalSettings.vala:58
 msgid "Japanese"
-msgstr ""
+msgstr "Японский"
 
 #: src/GlobalSettings.vala:59
 msgid "Portuguese"
-msgstr ""
+msgstr "Португальский"
 
 #: src/GlobalSettings.vala:60
 msgid "Czech"
-msgstr ""
+msgstr "Чешский"
 
 #: src/GlobalSettings.vala:61
 msgid "Estonian"
-msgstr ""
+msgstr "Эстонский"
 
 #: src/GlobalSettings.vala:62
 msgid "Serbian"
-msgstr ""
+msgstr "Сербский"
 
 #: src/GlobalSettings.vala:63
 msgid "Slovak"
-msgstr ""
+msgstr "Словацкий"
 
 #: src/DictionaryService.vala:37
 msgid "Noun"
-msgstr ""
+msgstr "Существительное"
 
 #: src/DictionaryService.vala:39
 msgid "Adverb"
-msgstr ""
+msgstr "Наречие"
 
 #: src/DictionaryService.vala:41
 msgid "Verb"
-msgstr ""
+msgstr "Глагол"
 
 #: src/DictionaryService.vala:43
 msgid "Adjective"
-msgstr ""
+msgstr "Прилагательное"
 
 #: src/DictionaryService.vala:45
 msgid "Pronoun"
-msgstr ""
+msgstr "Местоимение"
 
 #: src/DictionaryService.vala:47
 msgid "Conjunction"
-msgstr ""
+msgstr "Союз"
 
 #: src/DictionaryService.vala:49
 msgid "Particle"
-msgstr ""
+msgstr "Частица"
 
 #: src/DictionaryService.vala:51
 msgid "Participle"
-msgstr ""
+msgstr "Причастие"
 
 #: src/DictionaryService.vala:53
 msgid "AdverbialParticiple"
-msgstr ""
+msgstr "Деепричастие"
 
 #: src/TranslatorWindow.vala:129
 msgid "Switch language"
-msgstr ""
+msgstr "Переключение языка"
 
 #: src/TranslatorWindow.vala:133
 msgid "Dictation"
-msgstr ""
+msgstr "Диктовка"
 
 #: src/TranslatorWindow.vala:137 src/TranslatorWindow.vala:178
 msgid "Dictionary"
-msgstr ""
+msgstr "Словарь"
 
 #: src/TranslatorWindow.vala:174
 msgid "Search"
-msgstr ""
+msgstr "Поиск"
 
 #: src/TranslatorWindow.vala:209
 msgid "Clean"
-msgstr ""
+msgstr "Очистить"
 
 #: src/TranslatorWindow.vala:217
 msgid "Copy"
-msgstr ""
+msgstr "Копировать"
 
 #: src/TranslatorWindow.vala:415
 msgid "Translation copied to clipboard"
-msgstr ""
+msgstr "Перевод скопирован в буфер обмена"
 
 #: src/WebJsonClient.vala:26
 msgid "No connection to server"
-msgstr ""
+msgstr "Отсутствует подключение к серверу"

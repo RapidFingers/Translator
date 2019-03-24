@@ -22,63 +22,63 @@ msgstr ""
 #: data/com.github.rapidfingers.translator.appdata.xml.in:9
 #: data/com.github.rapidfingers.translator.desktop.in:3
 msgid "Translator"
-msgstr ""
+msgstr "Translator"
 
 #: data/com.github.rapidfingers.translator.appdata.xml.in:8
 msgid "RapidFingers"
-msgstr ""
+msgstr "RapidFingers"
 
 #: data/com.github.rapidfingers.translator.appdata.xml.in:11
 msgid "Simple and fast translator"
-msgstr ""
+msgstr "Простой и быстрый переводчик"
 
 #: data/com.github.rapidfingers.translator.appdata.xml.in:30
 msgid "Serbian language"
-msgstr ""
+msgstr "Сербский язык"
 
 #: data/com.github.rapidfingers.translator.appdata.xml.in:31
 msgid "Fix desktop file"
-msgstr ""
+msgstr "Исправлен desktop файл"
 
 #: data/com.github.rapidfingers.translator.appdata.xml.in:38
 msgid "Slovak language"
-msgstr ""
+msgstr "Словацкий язык"
 
 #: data/com.github.rapidfingers.translator.appdata.xml.in:39
 msgid "Translate progress"
-msgstr ""
+msgstr "Прогресс перевода"
 
 #: data/com.github.rapidfingers.translator.appdata.xml.in:46
 msgid "Fix for dark theme"
-msgstr ""
+msgstr "Исправление для тёмной темы"
 
 #: data/com.github.rapidfingers.translator.appdata.xml.in:53
 msgid "Homepage fix"
-msgstr ""
+msgstr "Исправление домашней страницы"
 
 #: data/com.github.rapidfingers.translator.appdata.xml.in:60
 msgid "System icons"
-msgstr ""
+msgstr "Системные значки"
 
 #: data/com.github.rapidfingers.translator.appdata.xml.in:61
 msgid "Better dark theme look"
-msgstr ""
+msgstr "Улучшение тёмной темы"
 
 #: data/com.github.rapidfingers.translator.appdata.xml.in:68
 msgid "Toast message if no connection to server"
-msgstr ""
+msgstr "Уведомление при отсутствии связи с сервером"
 
 #: data/com.github.rapidfingers.translator.appdata.xml.in:69
 msgid "Fix ugly text selection color"
-msgstr ""
+msgstr "Исправлен некрасивый цвет выделения текста"
 
 #: data/com.github.rapidfingers.translator.appdata.xml.in:70
 msgid "Minor bugfix"
-msgstr ""
+msgstr "Незначительные исправления"
 
 #: data/com.github.rapidfingers.translator.appdata.xml.in:77
 msgid "Timeout before translate"
-msgstr ""
+msgstr "Задержка перед переводом"
 
 #: data/com.github.rapidfingers.translator.appdata.xml.in:78
 msgid "Fix useless translate on language combobox click"
@@ -86,11 +86,11 @@ msgstr ""
 
 #: data/com.github.rapidfingers.translator.appdata.xml.in:79
 msgid "Fixed lack of translation, when text is changed during the transfer"
-msgstr ""
+msgstr "Исправлено отсутствие перевода, когда текст изменен во время передачи"
 
 #: data/com.github.rapidfingers.translator.appdata.xml.in:86
 msgid "Fixes for Juno"
-msgstr ""
+msgstr "Исправления для Juno"
 
 #: data/com.github.rapidfingers.translator.appdata.xml.in:93
 msgid "Clear button (thanks to camellan)"
@@ -110,12 +110,12 @@ msgstr ""
 
 #: data/com.github.rapidfingers.translator.desktop.in:4
 msgid "Translator App"
-msgstr ""
+msgstr "Переводчик"
 
 #: data/com.github.rapidfingers.translator.desktop.in:5
 msgid "Language translator"
-msgstr ""
+msgstr "Переводчик"
 
 #: data/com.github.rapidfingers.translator.desktop.in:8
 msgid "com.github.rapidfingers.translator"
-msgstr ""
+msgstr "com.github.rapidfingers.translator"
