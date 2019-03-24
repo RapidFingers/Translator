@@ -1,0 +1,173 @@
+# Haitian translations for com.github.rapidfingers.translator package.
+# Copyright (C) 2019 THE com.github.rapidfingers.translator'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.rapidfingers.translator package.
+# Automatically generated, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: com.github.rapidfingers.translator\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-24 18:58+0100\n"
+"PO-Revision-Date: 2019-03-24 18:58+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ht\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/GlobalSettings.vala:42
+msgid "English"
+msgstr ""
+
+#: src/GlobalSettings.vala:43
+msgid "Russian"
+msgstr ""
+
+#: src/GlobalSettings.vala:44
+msgid "Ukrainian"
+msgstr ""
+
+#: src/GlobalSettings.vala:45
+msgid "German"
+msgstr ""
+
+#: src/GlobalSettings.vala:46
+msgid "Polish"
+msgstr ""
+
+#: src/GlobalSettings.vala:47
+msgid "French"
+msgstr ""
+
+#: src/GlobalSettings.vala:48
+msgid "Spanish"
+msgstr ""
+
+#: src/GlobalSettings.vala:49
+msgid "Dutch"
+msgstr ""
+
+#: src/GlobalSettings.vala:50
+msgid "Italian"
+msgstr ""
+
+#: src/GlobalSettings.vala:51
+msgid "Latin"
+msgstr ""
+
+#: src/GlobalSettings.vala:52
+msgid "Greek"
+msgstr ""
+
+#: src/GlobalSettings.vala:53
+msgid "Finnish"
+msgstr ""
+
+#: src/GlobalSettings.vala:54
+msgid "Swedish"
+msgstr ""
+
+#: src/GlobalSettings.vala:55
+msgid "Turkish"
+msgstr ""
+
+#: src/GlobalSettings.vala:56
+msgid "Chinese"
+msgstr ""
+
+#: src/GlobalSettings.vala:57
+msgid "Korean"
+msgstr ""
+
+#: src/GlobalSettings.vala:58
+msgid "Japanese"
+msgstr ""
+
+#: src/GlobalSettings.vala:59
+msgid "Portuguese"
+msgstr ""
+
+#: src/GlobalSettings.vala:60
+msgid "Czech"
+msgstr ""
+
+#: src/GlobalSettings.vala:61
+msgid "Estonian"
+msgstr ""
+
+#: src/GlobalSettings.vala:62
+msgid "Serbian"
+msgstr ""
+
+#: src/GlobalSettings.vala:63
+msgid "Slovak"
+msgstr ""
+
+#: src/DictionaryService.vala:37
+msgid "Noun"
+msgstr ""
+
+#: src/DictionaryService.vala:39
+msgid "Adverb"
+msgstr ""
+
+#: src/DictionaryService.vala:41
+msgid "Verb"
+msgstr ""
+
+#: src/DictionaryService.vala:43
+msgid "Adjective"
+msgstr ""
+
+#: src/DictionaryService.vala:45
+msgid "Pronoun"
+msgstr ""
+
+#: src/DictionaryService.vala:47
+msgid "Conjunction"
+msgstr ""
+
+#: src/DictionaryService.vala:49
+msgid "Particle"
+msgstr ""
+
+#: src/DictionaryService.vala:51
+msgid "Participle"
+msgstr ""
+
+#: src/DictionaryService.vala:53
+msgid "AdverbialParticiple"
+msgstr ""
+
+#: src/TranslatorWindow.vala:152
+msgid "Switch language"
+msgstr ""
+
+#: src/TranslatorWindow.vala:156
+msgid "Dictation"
+msgstr ""
+
+#: src/TranslatorWindow.vala:160 src/TranslatorWindow.vala:186
+msgid "Dictionary"
+msgstr ""
+
+#: src/TranslatorWindow.vala:182
+msgid "Search"
+msgstr ""
+
+#: src/TranslatorWindow.vala:217
+msgid "Clean"
+msgstr ""
+
+#: src/TranslatorWindow.vala:225
+msgid "Copy"
+msgstr ""
+
+#: src/TranslatorWindow.vala:425
+msgid "Translation copied to clipboard"
+msgstr ""
+
+#: src/WebJsonClient.vala:26
+msgid "No connection to server"
+msgstr ""

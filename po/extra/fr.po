@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-24 18:19+0100\n"
+"POT-Creation-Date: 2019-03-24 18:59+0100\n"
 "PO-Revision-Date: 2019-03-24 18:19+0100\n"
 "Last-Translator: NathanBnm\n"
 "Language-Team: Français\n"
@@ -85,7 +85,9 @@ msgstr "Correction de la traduction inutile au clic de sélection de langue"
 
 #: data/com.github.rapidfingers.translator.appdata.xml.in:79
 msgid "Fixed lack of translation, when text is changed during the transfer"
-msgstr "Correction du vide de traduction, quand le texte est modifié pendant le transfert"
+msgstr ""
+"Correction du vide de traduction, quand le texte est modifié pendant le "
+"transfert"
 
 #: data/com.github.rapidfingers.translator.appdata.xml.in:86
 msgid "Fixes for Juno"
@@ -107,14 +109,14 @@ msgstr "Plus de langues et traductions (grâce à camellan)"
 msgid "Bug fixes (thanks to camellan)"
 msgstr "Corrections de bugs (grâce à camellan)"
 
-#: data/com.github.rapidfingers.translator.desktop.in:8
+#: data/com.github.rapidfingers.translator.desktop.in:4
 msgid "Translator App"
 msgstr "Application Traducteur"
 
-#: data/com.github.rapidfingers.translator.desktop.in:9
+#: data/com.github.rapidfingers.translator.desktop.in:5
 msgid "Language translator"
 msgstr "Traducteur"
 
-#: data/com.github.rapidfingers.translator.desktop.in:12
+#: data/com.github.rapidfingers.translator.desktop.in:8
 msgid "com.github.rapidfingers.translator"
 msgstr "com.github.rapidfingers.translator"
