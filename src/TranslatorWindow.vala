@@ -82,6 +82,30 @@ public class TranslateWindow : Gtk.ApplicationWindow {
     /// Is translate in progress
     private bool _isTranslating = false;
 
+    // Apply styles
+    // private void styleWindow() {
+    //     var style = @"
+    //         GtkTextView {
+    //             background-color: RGBA(255,0,0,0);
+    //         }
+    //         GtkTextView:selected {
+    //             background-color: #3689e6;
+    //         }
+    //         .dark-separator {
+    //             color: #888;
+    //         }
+    //         .popovercombo {
+    //             border: 1px solid #AAA;
+    //             box-shadow: 1px 1px 1px #DDD;
+    //             border-radius: 3px;
+    //         }
+    //         #contentbox, #topscroll, #bottomscroll, #topinfobox, #bottominfobox, #dictbox {
+    //             background-color: #fff;
+    //         }
+    //     ";
+    //     Granite.Widgets.Utils.set_theming_for_screen (this.get_screen (), style, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+    // }
+
     // Create language combos
     private void languageCombo () {
         leftLangCombo = new PopoverCombo ();
@@ -144,8 +168,8 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         var gtk_settings = Gtk.Settings.get_default ();
 
         mode_switch = new Granite.ModeSwitch.from_icon_name ("display-brightness-symbolic", "weather-clear-night-symbolic");
-        mode_switch.primary_icon_tooltip_text = ("Light background");
-        mode_switch.secondary_icon_tooltip_text = ("Dark background");
+        mode_switch.primary_icon_tooltip_text = (_("Light background"));
+        mode_switch.secondary_icon_tooltip_text = (_("Dark background"));
         mode_switch.valign = Gtk.Align.CENTER;
         mode_switch.bind_property ("active", gtk_settings, "gtk_application_prefer_dark_theme");
 
@@ -347,6 +371,8 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         refreshLangLabels();
 
         hideDictionary();
+
+        //styleWindow();
 
         this.destroy.connect(onWindowDestroy);
     }
