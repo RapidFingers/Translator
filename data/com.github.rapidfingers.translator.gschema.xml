@@ -16,6 +16,10 @@
         Destination language
       </description>
     </key>
-
+    <key name="use-dark-theme" type="b">
+        <default>false</default>
+        <summary>Dark Theme</summary>
+        <description>Prefer Dark Theme</description>
+    </key>
   </schema>
 </schemalist>

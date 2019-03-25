@@ -166,12 +166,14 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         //settingsButton.set_tooltip_text(_("Settings"));
 
         var gtk_settings = Gtk.Settings.get_default ();
+        GLib.Settings settings = new GLib.Settings (GlobalSettings.SCHEMA_NAME);
 
         mode_switch = new Granite.ModeSwitch.from_icon_name ("display-brightness-symbolic", "weather-clear-night-symbolic");
         mode_switch.primary_icon_tooltip_text = (_("Light background"));
         mode_switch.secondary_icon_tooltip_text = (_("Dark background"));
         mode_switch.valign = Gtk.Align.CENTER;
         mode_switch.bind_property ("active", gtk_settings, "gtk_application_prefer_dark_theme");
+        settings.bind ("use-dark-theme", mode_switch, "active", GLib.SettingsBindFlags.DEFAULT);
 
         _leftHeader.pack_start(leftLangCombo);
         _leftHeader.pack_start(changeButton);
