@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.rapidfingers.translator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-21 02:45+0400\n"
+"POT-Creation-Date: 2019-03-24 20:46+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -141,31 +141,59 @@ msgstr ""
 msgid "AdverbialParticiple"
 msgstr ""
 
-#: src/TranslatorWindow.vala:128
+#: src/DictionaryService.vala:55
+msgid "Preposition"
+msgstr ""
+
+#: src/DictionaryService.vala:57
+msgid "Interjection"
+msgstr ""
+
+#: src/DictionaryService.vala:59
+msgid "Determiner"
+msgstr ""
+
+#: src/DictionaryService.vala:61
+msgid "Determiner / Pronoun"
+msgstr ""
+
+#: src/DictionaryService.vala:63
+msgid "Numeral"
+msgstr ""
+
+#: src/TranslatorWindow.vala:129
 msgid "Switch language"
 msgstr ""
 
-#: src/TranslatorWindow.vala:132
+#: src/TranslatorWindow.vala:133
 msgid "Dictation"
 msgstr ""
 
-#: src/TranslatorWindow.vala:136 src/TranslatorWindow.vala:168
+#: src/TranslatorWindow.vala:137 src/TranslatorWindow.vala:178
 msgid "Dictionary"
 msgstr ""
 
-#: src/TranslatorWindow.vala:164
+#: src/TranslatorWindow.vala:147
+msgid "Light background"
+msgstr ""
+
+#: src/TranslatorWindow.vala:148
+msgid "Dark background"
+msgstr ""
+
+#: src/TranslatorWindow.vala:174
 msgid "Search"
 msgstr ""
 
-#: src/TranslatorWindow.vala:199
+#: src/TranslatorWindow.vala:209
 msgid "Clean"
 msgstr ""
 
-#: src/TranslatorWindow.vala:207
+#: src/TranslatorWindow.vala:217
 msgid "Copy"
 msgstr ""
 
-#: src/TranslatorWindow.vala:405
+#: src/TranslatorWindow.vala:415
 msgid "Translation copied to clipboard"
 msgstr ""
 

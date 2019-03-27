@@ -1,213 +1,202 @@
+# Spanish translations for com.github.rapidfingers.translator package.
+# Copyright (C) 2019 THE com.github.rapidfingers.translator'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.rapidfingers.translator package.
+# Automatically generated, 2019.
+#
 msgid ""
 msgstr ""
+"Project-Id-Version: com.github.rapidfingers.translator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-21 02:45+0400\n"
+"POT-Creation-Date: 2019-03-24 20:46+0100\n"
+"PO-Revision-Date: 2019-03-24 18:58+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/GlobalSettings.vala:42
 msgid "English"
-msgstr "Inglés"
+msgstr ""
 
 #: src/GlobalSettings.vala:43
 msgid "Russian"
-msgstr "Ruso"
+msgstr ""
 
 #: src/GlobalSettings.vala:44
 msgid "Ukrainian"
-msgstr "Ucraniano"
+msgstr ""
 
 #: src/GlobalSettings.vala:45
-#, fuzzy
 msgid "German"
-msgstr "Немецкий"
+msgstr ""
 
 #: src/GlobalSettings.vala:46
-#, fuzzy
 msgid "Polish"
-msgstr "Inglés"
+msgstr ""
 
 #: src/GlobalSettings.vala:47
 msgid "French"
-msgstr "Francés"
+msgstr ""
 
 #: src/GlobalSettings.vala:48
 msgid "Spanish"
-msgstr "Español"
+msgstr ""
 
 #: src/GlobalSettings.vala:49
 msgid "Dutch"
-msgstr "Holandés"
+msgstr ""
 
 #: src/GlobalSettings.vala:50
-#, fuzzy
 msgid "Italian"
-msgstr "Итальянский"
+msgstr ""
 
 #: src/GlobalSettings.vala:51
-#, fuzzy
 msgid "Latin"
-msgstr "Латинский"
+msgstr ""
 
 #: src/GlobalSettings.vala:52
-#, fuzzy
 msgid "Greek"
-msgstr "Греческий"
+msgstr ""
 
 #: src/GlobalSettings.vala:53
-#, fuzzy
 msgid "Finnish"
-msgstr "Финский"
+msgstr ""
 
 #: src/GlobalSettings.vala:54
-#, fuzzy
 msgid "Swedish"
-msgstr "Шведский"
+msgstr ""
 
 #: src/GlobalSettings.vala:55
-#, fuzzy
 msgid "Turkish"
-msgstr "Турецкий"
+msgstr ""
 
 #: src/GlobalSettings.vala:56
-#, fuzzy
 msgid "Chinese"
-msgstr "Китайский"
+msgstr ""
 
 #: src/GlobalSettings.vala:57
-#, fuzzy
 msgid "Korean"
-msgstr "Корейский"
+msgstr ""
 
 #: src/GlobalSettings.vala:58
-#, fuzzy
 msgid "Japanese"
-msgstr "Японский"
+msgstr ""
 
 #: src/GlobalSettings.vala:59
-#, fuzzy
 msgid "Portuguese"
-msgstr "Португальский"
+msgstr ""
 
 #: src/GlobalSettings.vala:60
-#, fuzzy
 msgid "Czech"
-msgstr "Чешский"
+msgstr ""
 
 #: src/GlobalSettings.vala:61
-#, fuzzy
 msgid "Estonian"
-msgstr "Эстонский"
+msgstr ""
 
 #: src/GlobalSettings.vala:62
-#, fuzzy
 msgid "Serbian"
-msgstr "Сербский"
+msgstr ""
 
 #: src/GlobalSettings.vala:63
-#, fuzzy
 msgid "Slovak"
-msgstr "Словацкий"
+msgstr ""
 
 #: src/DictionaryService.vala:37
-#, fuzzy
 msgid "Noun"
-msgstr "Существительное"
+msgstr ""
 
 #: src/DictionaryService.vala:39
-#, fuzzy
 msgid "Adverb"
-msgstr "Наречие"
+msgstr ""
 
 #: src/DictionaryService.vala:41
-#, fuzzy
 msgid "Verb"
-msgstr "Глагол"
+msgstr ""
 
 #: src/DictionaryService.vala:43
-#, fuzzy
 msgid "Adjective"
-msgstr "Прилагательное"
+msgstr ""
 
 #: src/DictionaryService.vala:45
-#, fuzzy
 msgid "Pronoun"
-msgstr "Местоимение"
+msgstr ""
 
 #: src/DictionaryService.vala:47
-#, fuzzy
 msgid "Conjunction"
-msgstr "Союз"
+msgstr ""
 
 #: src/DictionaryService.vala:49
-#, fuzzy
 msgid "Particle"
-msgstr "Частица"
+msgstr ""
 
 #: src/DictionaryService.vala:51
-#, fuzzy
 msgid "Participle"
-msgstr "Причастие"
+msgstr ""
 
 #: src/DictionaryService.vala:53
-#, fuzzy
 msgid "AdverbialParticiple"
-msgstr "Деепричастие"
+msgstr ""
 
-#: src/TranslatorWindow.vala:128
-#, fuzzy
+#: src/DictionaryService.vala:55
+msgid "Preposition"
+msgstr ""
+
+#: src/DictionaryService.vala:57
+msgid "Interjection"
+msgstr ""
+
+#: src/DictionaryService.vala:59
+msgid "Determiner"
+msgstr ""
+
+#: src/DictionaryService.vala:61
+msgid "Determiner / Pronoun"
+msgstr ""
+
+#: src/DictionaryService.vala:63
+msgid "Numeral"
+msgstr ""
+
+#: src/TranslatorWindow.vala:129
 msgid "Switch language"
-msgstr "Переключение языка"
+msgstr ""
 
-#: src/TranslatorWindow.vala:132
-#, fuzzy
+#: src/TranslatorWindow.vala:133
 msgid "Dictation"
-msgstr "Диктовка"
+msgstr ""
 
-#: src/TranslatorWindow.vala:136 src/TranslatorWindow.vala:168
-#, fuzzy
+#: src/TranslatorWindow.vala:137 src/TranslatorWindow.vala:178
 msgid "Dictionary"
-msgstr "Словарь"
+msgstr ""
 
-#: src/TranslatorWindow.vala:164
-#, fuzzy
+#: src/TranslatorWindow.vala:147
+msgid "Light background"
+msgstr ""
+
+#: src/TranslatorWindow.vala:148
+msgid "Dark background"
+msgstr ""
+
+#: src/TranslatorWindow.vala:174
 msgid "Search"
-msgstr "Поиск"
+msgstr ""
 
-#: src/TranslatorWindow.vala:199
-#, fuzzy
+#: src/TranslatorWindow.vala:209
 msgid "Clean"
-msgstr "Очистить"
+msgstr ""
 
-#: src/TranslatorWindow.vala:207
-#, fuzzy
+#: src/TranslatorWindow.vala:217
 msgid "Copy"
-msgstr "Копировать"
+msgstr ""
 
-#: src/TranslatorWindow.vala:405
+#: src/TranslatorWindow.vala:415
 msgid "Translation copied to clipboard"
 msgstr ""
 
 #: src/WebJsonClient.vala:26
-#, fuzzy
 msgid "No connection to server"
-msgstr "Отсутствует подключение к серверу"
-
-#, fuzzy
-#~ msgid "Translator"
-#~ msgstr "Переводчик"
-
-#, fuzzy
-#~ msgid "Translator App"
-#~ msgstr "Переводчик"
-
-#, fuzzy
-#~ msgid "Language translator"
-#~ msgstr "Language translator"
-
-#, fuzzy
-#~ msgid "com.github.rapidfingers.translator"
-#~ msgstr "com.github.rapidfingers.translator"
-
-#~ msgid "Deutsch"
-#~ msgstr "Alemán"
+msgstr ""
