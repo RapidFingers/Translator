@@ -19,184 +19,184 @@ msgstr ""
 
 #: src/GlobalSettings.vala:42
 msgid "English"
-msgstr ""
+msgstr "Inglês"
 
 #: src/GlobalSettings.vala:43
 msgid "Russian"
-msgstr ""
+msgstr "Russo"
 
 #: src/GlobalSettings.vala:44
 msgid "Ukrainian"
-msgstr ""
+msgstr "Ucraniano"
 
 #: src/GlobalSettings.vala:45
 msgid "German"
-msgstr ""
+msgstr "Alemão"
 
 #: src/GlobalSettings.vala:46
 msgid "Polish"
-msgstr ""
+msgstr "Polonês"
 
 #: src/GlobalSettings.vala:47
 msgid "French"
-msgstr ""
+msgstr "Francês"
 
 #: src/GlobalSettings.vala:48
 msgid "Spanish"
-msgstr ""
+msgstr "Espanhol"
 
 #: src/GlobalSettings.vala:49
 msgid "Dutch"
-msgstr ""
+msgstr "Holandês"
 
 #: src/GlobalSettings.vala:50
 msgid "Italian"
-msgstr ""
+msgstr "Italiano"
 
 #: src/GlobalSettings.vala:51
 msgid "Latin"
-msgstr ""
+msgstr "Latim"
 
 #: src/GlobalSettings.vala:52
 msgid "Greek"
-msgstr ""
+msgstr "Grego"
 
 #: src/GlobalSettings.vala:53
 msgid "Finnish"
-msgstr ""
+msgstr "Finlandês"
 
 #: src/GlobalSettings.vala:54
 msgid "Swedish"
-msgstr ""
+msgstr "Sueco"
 
 #: src/GlobalSettings.vala:55
 msgid "Turkish"
-msgstr ""
+msgstr "Turco"
 
 #: src/GlobalSettings.vala:56
 msgid "Chinese"
-msgstr ""
+msgstr "Chinês"
 
 #: src/GlobalSettings.vala:57
 msgid "Korean"
-msgstr ""
+msgstr "Coreano"
 
 #: src/GlobalSettings.vala:58
 msgid "Japanese"
-msgstr ""
+msgstr "Japonês"
 
 #: src/GlobalSettings.vala:59
 msgid "Portuguese"
-msgstr ""
+msgstr "Português"
 
 #: src/GlobalSettings.vala:60
 msgid "Czech"
-msgstr ""
+msgstr "Tcheco"
 
 #: src/GlobalSettings.vala:61
 msgid "Estonian"
-msgstr ""
+msgstr "Estoniano"
 
 #: src/GlobalSettings.vala:62
 msgid "Serbian"
-msgstr ""
+msgstr "Sérvio"
 
 #: src/GlobalSettings.vala:63
 msgid "Slovak"
-msgstr ""
+msgstr "Eslovaco"
 
 #: src/DictionaryService.vala:37
 msgid "Noun"
-msgstr ""
+msgstr "Substantivo"
 
 #: src/DictionaryService.vala:39
 msgid "Adverb"
-msgstr ""
+msgstr "Advérbio"
 
 #: src/DictionaryService.vala:41
 msgid "Verb"
-msgstr ""
+msgstr "Verbo"
 
 #: src/DictionaryService.vala:43
 msgid "Adjective"
-msgstr ""
+msgstr "Adjetivo"
 
 #: src/DictionaryService.vala:45
 msgid "Pronoun"
-msgstr ""
+msgstr "Pronome"
 
 #: src/DictionaryService.vala:47
 msgid "Conjunction"
-msgstr ""
+msgstr "Conjunção"
 
 #: src/DictionaryService.vala:49
 msgid "Particle"
-msgstr ""
+msgstr "Partícula"
 
 #: src/DictionaryService.vala:51
 msgid "Participle"
-msgstr ""
+msgstr "Particípio"
 
 #: src/DictionaryService.vala:53
 msgid "AdverbialParticiple"
-msgstr ""
+msgstr "Particípio Adverbial"
 
 #: src/DictionaryService.vala:55
 msgid "Preposition"
-msgstr ""
+msgstr "Preposição"
 
 #: src/DictionaryService.vala:57
 msgid "Interjection"
-msgstr ""
+msgstr "Interjeição"
 
 #: src/DictionaryService.vala:59
 msgid "Determiner"
-msgstr ""
+msgstr "Pronome"
 
 #: src/DictionaryService.vala:61
 msgid "Determiner / Pronoun"
-msgstr ""
+msgstr "Pronome"
 
 #: src/DictionaryService.vala:63
 msgid "Numeral"
-msgstr ""
+msgstr "Numeral"
 
 #: src/TranslatorWindow.vala:129
 msgid "Switch language"
-msgstr ""
+msgstr "Alterar Idioma"
 
 #: src/TranslatorWindow.vala:133
 msgid "Dictation"
-msgstr ""
+msgstr "Ditado"
 
 #: src/TranslatorWindow.vala:137 src/TranslatorWindow.vala:178
 msgid "Dictionary"
-msgstr ""
+msgstr "Dicionário"
 
 #: src/TranslatorWindow.vala:147
 msgid "Light background"
-msgstr ""
+msgstr "Cor de fundo clara"
 
 #: src/TranslatorWindow.vala:148
 msgid "Dark background"
-msgstr ""
+msgstr "Cor de fundo escura"
 
 #: src/TranslatorWindow.vala:174
 msgid "Search"
-msgstr ""
+msgstr "Pesquisar"
 
 #: src/TranslatorWindow.vala:209
 msgid "Clean"
-msgstr ""
+msgstr "Limpar"
 
 #: src/TranslatorWindow.vala:217
 msgid "Copy"
-msgstr ""
+msgstr "Copiar"
 
 #: src/TranslatorWindow.vala:415
 msgid "Translation copied to clipboard"
-msgstr ""
+msgstr "Tradução copiada para a área de transferência"
 
 #: src/WebJsonClient.vala:26
 msgid "No connection to server"
-msgstr ""
+msgstr "Sem conexão com o servidor"
