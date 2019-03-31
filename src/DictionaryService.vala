@@ -91,7 +91,7 @@ public class DictionaryService : AsyncTaskExecuter {
                 var obj2 = el2.get_object();
                 var tr = new WordTranslation();
                 if (obj2.has_member ("text")) tr.Text = obj2.get_string_member("text");
-               if (obj2.has_member ("pos")) tr.Category = obj2.get_string_member("pos");
+                if (obj2.has_member ("pos")) tr.Category = obj2.get_string_member("pos");
                 trList.add(tr);
               }
               cat.Translations = trList.to_array();
