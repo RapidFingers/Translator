@@ -82,6 +82,29 @@ public class TranslateWindow : Gtk.ApplicationWindow {
     /// Is translate in progress
     private bool _isTranslating = false;
 
+    private void styleWindow() {
+        var style = @"
+            GtkTextView {
+                background-color: RGBA(255,0,0,0);
+            }
+            GtkTextView:selected {
+                background-color: #3689e6;
+            }
+            .dark-separator {
+                color: #888;
+            }
+            .popovercombo {
+                border: 1px solid #AAA;
+                box-shadow: 1px 1px 1px #DDD;
+                border-radius: 3px;
+            }
+            #contentbox, #topscroll, #bottomscroll, #topinfobox, #bottominfobox, #dictbox {
+                background-color: @base_color;
+            }
+        ";
+        Granite.Widgets.Utils.set_theming_for_screen (this.get_screen (), style, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+    }
+
     // Create language combos
     private void languageCombo () {
         leftLangCombo = new PopoverCombo ();
@@ -125,7 +148,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         // Create language combo
         languageCombo ();
 
-        changeButton = new Gtk.Button.from_icon_name("network-transmit-receive-symbolic");
+        changeButton = new Gtk.Button.from_icon_name("media-playlist-repeat-symbolic");
         changeButton.set_tooltip_text(_("Switch language"));
         changeButton.clicked.connect(onSwap);
 
@@ -347,6 +370,8 @@ public class TranslateWindow : Gtk.ApplicationWindow {
         refreshLangLabels();
 
         hideDictionary();
+
+        styleWindow();
 
         this.destroy.connect(onWindowDestroy);
     }
