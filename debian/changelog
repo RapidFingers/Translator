@@ -1,7 +1,9 @@
 translate (1.4.1) precise; urgency=low
    * Translations to brazilian portuguese (thanks to korndorfer)
    * Fix appdata translations (thanks to NathanBnm)
+   * Save theme settings (thanks to camellan)
    * Fix dark theme color
+   -- Grabli66 <grabli66@gmail.com>  Sun, 31 March 2019 19:58:00 -0500
 
 translate (1.4.0) precise; urgency=low
   * Clear button (thanks to camellan)
