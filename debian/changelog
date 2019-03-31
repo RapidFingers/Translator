@@ -1,3 +1,8 @@
+translate (1.4.1) precise; urgency=low
+   * Translations to brazilian portuguese (thanks to korndorfer)
+   * Fix appdata translations (thanks to NathanBnm)
+   * Fix dark theme color
+
 translate (1.4.0) precise; urgency=low
   * Clear button (thanks to camellan)
   * Copy button (thanks to camellan)

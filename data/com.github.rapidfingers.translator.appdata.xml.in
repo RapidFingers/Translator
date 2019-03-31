@@ -97,5 +97,14 @@
         </ul>
 ​      </description>
 ​    </release>
+    <release version="1.4.1" date="2019-03-31">
+​      <description>
+​         <ul>
+            <li>Translations to brazilian portuguese (thanks to korndorfer)</li>
+            <li>Fix appdata translations (thanks to NathanBnm)</li>
+            <li>Fix dark theme color</li>
+        </ul>
+​      </description>
+​    </release>
 ​ </releases>
 </component>
