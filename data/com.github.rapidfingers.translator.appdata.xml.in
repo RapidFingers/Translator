@@ -102,6 +102,7 @@
 ​         <ul>
             <li>Translations to brazilian portuguese (thanks to korndorfer)</li>
             <li>Fix appdata translations (thanks to NathanBnm)</li>
+            <li>Save theme settings (thanks to camellan)</li>
             <li>Fix dark theme color</li>
         </ul>
 ​      </description>
