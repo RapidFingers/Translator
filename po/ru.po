@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: com.github.rapidfingers.translator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-03-24 20:46+0100\n"
-"PO-Revision-Date: 2019-03-24 18:58+0100\n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2019-03-31 20:39+0400\n"
+"Last-Translator: Andrey Kultyapov <camellan@yandex.ru>\n"
 "Language-Team: none\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #: src/GlobalSettings.vala:42
 msgid "English"
@@ -144,12 +145,11 @@ msgstr "Деепричастие"
 
 #: src/DictionaryService.vala:55
 msgid "Preposition"
-msgstr ""
+msgstr "Предлог"
 
 #: src/DictionaryService.vala:57
-#, fuzzy
 msgid "Interjection"
-msgstr "Союз"
+msgstr "Междометие"
 
 #: src/DictionaryService.vala:59
 msgid "Determiner"
@@ -177,11 +177,11 @@ msgstr "Словарь"
 
 #: src/TranslatorWindow.vala:147
 msgid "Light background"
-msgstr ""
+msgstr "Светлая тема"
 
 #: src/TranslatorWindow.vala:148
 msgid "Dark background"
-msgstr ""
+msgstr "Тёмная тема"
 
 #: src/TranslatorWindow.vala:174
 msgid "Search"
