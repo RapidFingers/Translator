@@ -1,202 +1,207 @@
 # Turkish translations for com.github.rapidfingers.translator package.
 # Copyright (C) 2019 THE com.github.rapidfingers.translator'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.rapidfingers.translator package.
-# Automatically generated, 2019.
+#
+# Sabri Ünal <libreajans@gmail.com>, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: com.github.rapidfingers.translator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-03-24 20:46+0100\n"
-"PO-Revision-Date: 2019-03-24 18:58+0100\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2019-10-15 02:56+0300\n"
+"Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
+"Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #: src/GlobalSettings.vala:42
 msgid "English"
-msgstr ""
+msgstr "İngilizce"
 
 #: src/GlobalSettings.vala:43
 msgid "Russian"
-msgstr ""
+msgstr "Rusça"
 
 #: src/GlobalSettings.vala:44
 msgid "Ukrainian"
-msgstr ""
+msgstr "Ukraynaca"
 
 #: src/GlobalSettings.vala:45
 msgid "German"
-msgstr ""
+msgstr "Almanca"
 
 #: src/GlobalSettings.vala:46
 msgid "Polish"
-msgstr ""
+msgstr "Lehçe"
 
 #: src/GlobalSettings.vala:47
 msgid "French"
-msgstr ""
+msgstr "Fransızca"
 
 #: src/GlobalSettings.vala:48
 msgid "Spanish"
-msgstr ""
+msgstr "İspanyolca"
 
 #: src/GlobalSettings.vala:49
 msgid "Dutch"
-msgstr ""
+msgstr "Felemenkçe"
 
 #: src/GlobalSettings.vala:50
 msgid "Italian"
-msgstr ""
+msgstr "İtalyanca"
 
 #: src/GlobalSettings.vala:51
 msgid "Latin"
-msgstr ""
+msgstr "Latince"
 
 #: src/GlobalSettings.vala:52
 msgid "Greek"
-msgstr ""
+msgstr "Yunanca"
 
 #: src/GlobalSettings.vala:53
 msgid "Finnish"
-msgstr ""
+msgstr "Fince"
 
 #: src/GlobalSettings.vala:54
 msgid "Swedish"
-msgstr ""
+msgstr "İsveççe"
 
 #: src/GlobalSettings.vala:55
 msgid "Turkish"
-msgstr ""
+msgstr "Türkçe"
 
 #: src/GlobalSettings.vala:56
 msgid "Chinese"
-msgstr ""
+msgstr "Çince"
 
 #: src/GlobalSettings.vala:57
 msgid "Korean"
-msgstr ""
+msgstr "Korece"
 
 #: src/GlobalSettings.vala:58
 msgid "Japanese"
-msgstr ""
+msgstr "Japonca"
 
 #: src/GlobalSettings.vala:59
 msgid "Portuguese"
-msgstr ""
+msgstr "Portekizce"
 
 #: src/GlobalSettings.vala:60
 msgid "Czech"
-msgstr ""
+msgstr "Çekçe"
 
 #: src/GlobalSettings.vala:61
 msgid "Estonian"
-msgstr ""
+msgstr "Estonca"
 
 #: src/GlobalSettings.vala:62
 msgid "Serbian"
-msgstr ""
+msgstr "Sırpça"
 
 #: src/GlobalSettings.vala:63
 msgid "Slovak"
-msgstr ""
+msgstr "Slovakça"
 
 #: src/DictionaryService.vala:37
 msgid "Noun"
-msgstr ""
+msgstr "İsim"
 
 #: src/DictionaryService.vala:39
 msgid "Adverb"
-msgstr ""
+msgstr "Zarf"
 
 #: src/DictionaryService.vala:41
 msgid "Verb"
-msgstr ""
+msgstr "Fiil"
 
 #: src/DictionaryService.vala:43
 msgid "Adjective"
-msgstr ""
+msgstr "Sıfat"
 
 #: src/DictionaryService.vala:45
 msgid "Pronoun"
-msgstr ""
+msgstr "Zamir"
 
 #: src/DictionaryService.vala:47
 msgid "Conjunction"
-msgstr ""
+msgstr "Bağlaç"
 
+# Preposition ile karıştığı için parantez içinde belirtildi
 #: src/DictionaryService.vala:49
 msgid "Particle"
-msgstr ""
+msgstr "Edat (Particle)"
 
 #: src/DictionaryService.vala:51
 msgid "Participle"
-msgstr ""
+msgstr "Ortaç"
 
+# Uygun çeviri bulamadığım için ikisi birden belirtildi
 #: src/DictionaryService.vala:53
 msgid "AdverbialParticiple"
-msgstr ""
+msgstr "Zarf Ortaç (Adverbial Participle)"
 
+# Participle ile karıştığı için parantez içinde belirtildi
 #: src/DictionaryService.vala:55
 msgid "Preposition"
-msgstr ""
+msgstr "Edat (Preposition)"
 
 #: src/DictionaryService.vala:57
 msgid "Interjection"
-msgstr ""
+msgstr "Ünlem"
 
 #: src/DictionaryService.vala:59
 msgid "Determiner"
-msgstr ""
+msgstr "Belirteç"
 
 #: src/DictionaryService.vala:61
 msgid "Determiner / Pronoun"
-msgstr ""
+msgstr "Belirteç / Zamir"
 
 #: src/DictionaryService.vala:63
 msgid "Numeral"
-msgstr ""
+msgstr "Rakam"
 
 #: src/TranslatorWindow.vala:129
 msgid "Switch language"
-msgstr ""
+msgstr "Dil değiştir"
 
 #: src/TranslatorWindow.vala:133
 msgid "Dictation"
-msgstr ""
+msgstr "İmla"
 
 #: src/TranslatorWindow.vala:137 src/TranslatorWindow.vala:178
 msgid "Dictionary"
-msgstr ""
+msgstr "Sözlük"
 
 #: src/TranslatorWindow.vala:147
 msgid "Light background"
-msgstr ""
+msgstr "Açık arkaplan"
 
 #: src/TranslatorWindow.vala:148
 msgid "Dark background"
-msgstr ""
+msgstr "Koyu arkaplan"
 
 #: src/TranslatorWindow.vala:174
 msgid "Search"
-msgstr ""
+msgstr "Ara"
 
 #: src/TranslatorWindow.vala:209
 msgid "Clean"
-msgstr ""
+msgstr "Temizle"
 
 #: src/TranslatorWindow.vala:217
 msgid "Copy"
-msgstr ""
+msgstr "Kopyala"
 
 #: src/TranslatorWindow.vala:415
 msgid "Translation copied to clipboard"
-msgstr ""
+msgstr "Çeviri panoya kopyalandı"
 
 #: src/WebJsonClient.vala:26
 msgid "No connection to server"
-msgstr ""
+msgstr "Sunucuya bağlanamadı"
