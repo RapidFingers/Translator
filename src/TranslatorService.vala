@@ -22,6 +22,7 @@ public class TranslateService : AsyncTaskExecuter {
     var data = new Gee.ArrayList<string>();
 
     if (root != null) {
+        this.CheckForError(root);
         var sentences = root.get_array_member("text");
 
         if (sentences != null) {
@@ -45,5 +46,12 @@ public class TranslateService : AsyncTaskExecuter {
     _to = to;
     _text = text;
     Run();
+  }
+
+  private void CheckForError(Json.Object response) throws TranslatorError {
+    if (response.has_member ("code") && response.has_member ("message")) {
+        string error_message = response.get_member("message").get_string();
+        throw new TranslatorError.TranslatedVolumeExceeded(error_message);
+    }
   }
 }
