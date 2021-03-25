@@ -22,7 +22,7 @@ public class Main : Object {
         var destLang = global.LoadDestLang();
 
         if (source != null) sourceLang = source;
-        if (dest != null) destLang = dest;
+        if ((dest != null) && (dest !=source)) destLang = dest;
 
         global.setSourceStartLang(sourceLang);
         global.setDestStartLang(destLang);

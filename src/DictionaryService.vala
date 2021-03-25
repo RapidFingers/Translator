@@ -70,7 +70,7 @@ public class DictionaryService : AsyncTaskExecuter {
     try {
       var word = Soup.URI.encode(_word, null);
       var request = @"https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=$(API_KEY)&lang=$(_sourceLang)-$(_destLang)&text=$(word)&ui=en";
-      var root = WebJsonClient.Get(request);
+	  var root = WebJsonClient.Get(request);
 
       if (root != null) {
           var defs = root.get_array_member("def");
