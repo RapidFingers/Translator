@@ -2,7 +2,7 @@
 // Main translator window
 public class TranslateWindow : Gtk.ApplicationWindow {
     /// Timeout before translate in milliseconds
-    const int TIMEOUT_BEFOR_TRANSLATE = 500;
+    const int TIMEOUT_BEFOR_TRANSLATE = 1000;
 
     /// Service for translating
     private TranslateService _translateService;
@@ -82,7 +82,9 @@ public class TranslateWindow : Gtk.ApplicationWindow {
     /// Is translate in progress
     private bool _isTranslating = false;
 
+	//public Gtk.CssProvider style_provider;
     private void styleWindow() {
+		
         var style = @"
             GtkTextView {
                 background-color: RGBA(255,0,0,0);
@@ -102,7 +104,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
                 background-color: @base_color;
             }
         ";
-        Granite.Widgets.Utils.set_theming_for_screen (this.get_screen (), style, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+		Granite.Widgets.Utils.set_theming_for_screen (this.get_screen (), style, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
     }
 
     // Create language combos
@@ -417,8 +419,8 @@ public class TranslateWindow : Gtk.ApplicationWindow {
 
         leftLangCombo.setLanguages (langs);
         leftLangCombo.setActive (global.getSourceStartLang());
-        leftLangCombo.changed.connect(onLeftComboChange);
-
+		leftLangCombo.clicked.connect(onLeftComboChange);
+		
         leftLang = getLeftLang();
         rightLang = getRightLang();
     }
@@ -469,7 +471,6 @@ public class TranslateWindow : Gtk.ApplicationWindow {
     private void onLangChange(bool isRight) {
         var leftLa = getLeftLang();
         var rightLa = getRightLang();
-
         var needUpdate = true;
 
         if (leftLa == rightLa) {
@@ -485,7 +486,7 @@ public class TranslateWindow : Gtk.ApplicationWindow {
             topText.buffer.text = bottomText.buffer.text;
         }
 
-        if (rightLa == rightLang)
+        if ((rightLa == rightLang) && (leftLa == leftLang))
             needUpdate = false;
 
         if (needUpdate) {

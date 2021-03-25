@@ -40,27 +40,32 @@ public class GlobalSettings : Object {
     private void initLanguages() {
         _langs = new Gee.ArrayList<LangInfo>();
         addLang("en", _("English"));
-        addLang("ru", _("Russian"));
-        addLang("uk", _("Ukrainian"));
-        addLang("de", _("German"));
-        addLang("pl", _("Polish"));
-        addLang("fr", _("French"));
+		addLang("ar", _("Arabic"));
+		addLang("zh", _("Chinese"));
+		addLang("fr", _("French"));
+		addLang("de", _("German"));
+		addLang("hi", _("Hindi"));
+		addLang("ga", _("Irish"));
+		addLang("it", _("Italian"));
+		addLang("ja", _("Japanese"));
+		addLang("ko", _("Korean"));
+		addLang("pt", _("Portuguese"));
+		addLang("ru", _("Russian"));
         addLang("es", _("Spanish"));
+		//Added from Yandex Arabic Hindi, Irish
+		//Langages lost from Yandex :
+        /*addLang("uk", _("Ukrainian"));
+        addLang("pl", _("Polish"));
         addLang("nl", _("Dutch"));
-        addLang("it", _("Italian"));
         addLang("la", _("Latin"));
         addLang("el", _("Greek"));
         addLang("fi", _("Finnish"));
         addLang("sv", _("Swedish"));
         addLang("tr", _("Turkish"));
-        addLang("zh", _("Chinese"));
-        addLang("ko", _("Korean"));
-        addLang("ja", _("Japanese"));
-        addLang("pt", _("Portuguese"));
         addLang("cs", _("Czech"));
         addLang("et", _("Estonian"));
         addLang("sr", _("Serbian"));
-        addLang("sk", _("Slovak"));
+        addLang("sk", _("Slovak")); */
 
         _langs.sort ((e1, e2) => {
             if (e1.name > e2.name) return 1;

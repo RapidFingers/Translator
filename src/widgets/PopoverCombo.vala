@@ -83,7 +83,7 @@ public class PopoverCombo : Gtk.ToggleButton {
         toggled.connect (() => {
             if (active) {
                 popover.show_all ();
-                setActive (activeLang.info.id);
+				setActive (activeLang.info.id); 
             } else {
                 popover.hide ();
             }

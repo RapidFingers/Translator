@@ -2,7 +2,8 @@
 public class WebJsonClient : GLib.Object {
   /// No connection to server code
   private const int NO_CONNECTION = 2;
-
+  private const int STATUS_OK = 200;
+	
   /// Json parser
   private static Json.Parser _parser;
   private static Json.Parser parser {
@@ -19,19 +20,22 @@ public class WebJsonClient : GLib.Object {
     session.proxy_uri = GlobalSettings.getProxyUri();
 
     var url = new Soup.URI(request);
-    var message = new Soup.Message.from_uri ("GET", url);
+    var message = new Soup.Message.from_uri ("POST", url);
 
     var status = session.send_message(message);
     if (status == NO_CONNECTION) {
       throw new TranslatorError.NoConnection(_("No connection to server"));
     }
-    try {
-      var mess = (string)message.response_body.data;
-      parser.load_from_data (mess);
-    }
-    catch (GLib.Error error) {
-        warning ("%s", error.message);
-    }
-      return parser.get_root ().get_object ();
+	  
+	if (status == STATUS_OK) {
+		try {
+		  var mess = (string)message.response_body.data;
+		  parser.load_from_data (mess);
+		}
+		catch (GLib.Error error) {
+		    warning ("%s", error.message);
+		}
+		  return parser.get_root ().get_object ();
+	  } else { throw new TranslatorError.NoConnection("status "+status.to_string()); }
   }
 }

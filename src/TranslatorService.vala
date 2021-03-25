@@ -1,6 +1,5 @@
 // Translation service that use Yandex translate
 public class TranslateService : AsyncTaskExecuter {  
-  private const string API_KEY = "trnsl.1.1.20150427T160217Z.69da78079263823e.0f0caa9724cee126c18028e70f227b633a3fe58f";
   private string[] _result;
   private string _from;
   private string _to;
@@ -17,18 +16,21 @@ public class TranslateService : AsyncTaskExecuter {
   /// Task main working method
   public override void OnExecute() throws TranslatorError {
     var ntext = Soup.URI.encode(_text, null);    
-    var request = @"https://translate.yandex.net/api/v1.5/tr.json/translate?key=$(API_KEY)&lang=$(_from)-$(_to)&text=$(ntext)";
-    var root = WebJsonClient.Get(request);
+    //var request = @"https://translate.yandex.net/api/v1.5/tr.json/translate?key=$(API_KEY)&lang=$(_from)-$(_to)&text=$(ntext)";
+    var request= @"https://libretranslate.com/translate?q="+ntext+"&source="+_from+"&target="+_to;
+	
+	var root = WebJsonClient.Get(request);  
     var data = new Gee.ArrayList<string>();
 
     if (root != null) {
-        var sentences = root.get_array_member("text");
+        var sentences = root.get_string_member("translatedText");
 
         if (sentences != null) {
-            foreach (var s in sentences.get_elements()) {
-                var el = s.get_string();
-                data.add(el);
-            }
+            //foreach (var s in sentences.get_elements()) {
+            //    var el = s.get_string();
+            //    data.add(el);
+			data.add (sentences.to_string());
+            //}
         }
         _result = data.to_array();
     }
